@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "QdpYQmui/gdI6alcG+NdgJXfr9SWAOD40cjcGeYYbUn1zi42kaosv5hrcLk+OgAEPjty6t7fqguL9Iano9mVfA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Simov\\Desktop\\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\\WorkAndTravel.Common\\WorkAndTravel.Common.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Simov\\.nuget\\packages\\stylecop.analyzers\\1.2.0-beta.205\\stylecop.analyzers.1.2.0-beta.205.nupkg.sha512",
+    "C:\\Users\\Simov\\.nuget\\packages\\stylecop.analyzers.unstable\\1.2.0.205\\stylecop.analyzers.unstable.1.2.0.205.nupkg.sha512"
+  ],
+  "logs": []
+}

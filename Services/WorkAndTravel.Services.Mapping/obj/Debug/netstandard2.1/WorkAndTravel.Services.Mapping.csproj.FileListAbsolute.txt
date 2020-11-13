@@ -1,0 +1,9 @@
+C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Services\WorkAndTravel.Services.Mapping\bin\Debug\netstandard2.1\WorkAndTravel.Services.Mapping.deps.json
+C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Services\WorkAndTravel.Services.Mapping\bin\Debug\netstandard2.1\WorkAndTravel.Services.Mapping.dll
+C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Services\WorkAndTravel.Services.Mapping\bin\Debug\netstandard2.1\WorkAndTravel.Services.Mapping.pdb
+C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Services\WorkAndTravel.Services.Mapping\obj\Debug\netstandard2.1\WorkAndTravel.Services.Mapping.csprojAssemblyReference.cache
+C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Services\WorkAndTravel.Services.Mapping\obj\Debug\netstandard2.1\WorkAndTravel.Services.Mapping.csproj.CoreCompileInputs.cache
+C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Services\WorkAndTravel.Services.Mapping\obj\Debug\netstandard2.1\WorkAndTravel.Services.Mapping.AssemblyInfoInputs.cache
+C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Services\WorkAndTravel.Services.Mapping\obj\Debug\netstandard2.1\WorkAndTravel.Services.Mapping.AssemblyInfo.cs
+C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Services\WorkAndTravel.Services.Mapping\obj\Debug\netstandard2.1\WorkAndTravel.Services.Mapping.dll
+C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Services\WorkAndTravel.Services.Mapping\obj\Debug\netstandard2.1\WorkAndTravel.Services.Mapping.pdb

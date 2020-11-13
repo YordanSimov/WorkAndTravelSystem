@@ -1,0 +1,9 @@
+C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Web\WorkAndTravel.Web.Infrastructure\bin\Debug\netstandard2.1\WorkAndTravel.Web.Infrastructure.deps.json
+C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Web\WorkAndTravel.Web.Infrastructure\bin\Debug\netstandard2.1\WorkAndTravel.Web.Infrastructure.dll
+C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Web\WorkAndTravel.Web.Infrastructure\bin\Debug\netstandard2.1\WorkAndTravel.Web.Infrastructure.pdb
+C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Web\WorkAndTravel.Web.Infrastructure\obj\Debug\netstandard2.1\WorkAndTravel.Web.Infrastructure.csprojAssemblyReference.cache
+C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Web\WorkAndTravel.Web.Infrastructure\obj\Debug\netstandard2.1\WorkAndTravel.Web.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Web\WorkAndTravel.Web.Infrastructure\obj\Debug\netstandard2.1\WorkAndTravel.Web.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Web\WorkAndTravel.Web.Infrastructure\obj\Debug\netstandard2.1\WorkAndTravel.Web.Infrastructure.AssemblyInfo.cs
+C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Web\WorkAndTravel.Web.Infrastructure\obj\Debug\netstandard2.1\WorkAndTravel.Web.Infrastructure.dll
+C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Web\WorkAndTravel.Web.Infrastructure\obj\Debug\netstandard2.1\WorkAndTravel.Web.Infrastructure.pdb

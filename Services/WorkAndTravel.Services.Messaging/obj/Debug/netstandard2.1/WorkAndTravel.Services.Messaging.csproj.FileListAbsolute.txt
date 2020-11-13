@@ -1,0 +1,9 @@
+C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Services\WorkAndTravel.Services.Messaging\bin\Debug\netstandard2.1\WorkAndTravel.Services.Messaging.deps.json
+C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Services\WorkAndTravel.Services.Messaging\bin\Debug\netstandard2.1\WorkAndTravel.Services.Messaging.dll
+C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Services\WorkAndTravel.Services.Messaging\bin\Debug\netstandard2.1\WorkAndTravel.Services.Messaging.pdb
+C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Services\WorkAndTravel.Services.Messaging\obj\Debug\netstandard2.1\WorkAndTravel.Services.Messaging.csprojAssemblyReference.cache
+C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Services\WorkAndTravel.Services.Messaging\obj\Debug\netstandard2.1\WorkAndTravel.Services.Messaging.csproj.CoreCompileInputs.cache
+C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Services\WorkAndTravel.Services.Messaging\obj\Debug\netstandard2.1\WorkAndTravel.Services.Messaging.AssemblyInfoInputs.cache
+C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Services\WorkAndTravel.Services.Messaging\obj\Debug\netstandard2.1\WorkAndTravel.Services.Messaging.AssemblyInfo.cs
+C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Services\WorkAndTravel.Services.Messaging\obj\Debug\netstandard2.1\WorkAndTravel.Services.Messaging.dll
+C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Services\WorkAndTravel.Services.Messaging\obj\Debug\netstandard2.1\WorkAndTravel.Services.Messaging.pdb

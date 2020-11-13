@@ -1,0 +1,12 @@
+C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Data\WorkAndTravel.Data.Models\bin\Debug\netstandard2.1\WorkAndTravel.Data.Models.deps.json
+C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Data\WorkAndTravel.Data.Models\bin\Debug\netstandard2.1\WorkAndTravel.Data.Models.dll
+C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Data\WorkAndTravel.Data.Models\bin\Debug\netstandard2.1\WorkAndTravel.Data.Models.pdb
+C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Data\WorkAndTravel.Data.Models\bin\Debug\netstandard2.1\WorkAndTravel.Data.Common.dll
+C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Data\WorkAndTravel.Data.Models\bin\Debug\netstandard2.1\WorkAndTravel.Data.Common.pdb
+C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Data\WorkAndTravel.Data.Models\obj\Debug\netstandard2.1\WorkAndTravel.Data.Models.csprojAssemblyReference.cache
+C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Data\WorkAndTravel.Data.Models\obj\Debug\netstandard2.1\WorkAndTravel.Data.Models.csproj.CoreCompileInputs.cache
+C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Data\WorkAndTravel.Data.Models\obj\Debug\netstandard2.1\WorkAndTravel.Data.Models.AssemblyInfoInputs.cache
+C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Data\WorkAndTravel.Data.Models\obj\Debug\netstandard2.1\WorkAndTravel.Data.Models.AssemblyInfo.cs
+C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Data\WorkAndTravel.Data.Models\obj\Debug\netstandard2.1\WorkAndTravel.Data.Models.csproj.CopyComplete
+C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Data\WorkAndTravel.Data.Models\obj\Debug\netstandard2.1\WorkAndTravel.Data.Models.dll
+C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Data\WorkAndTravel.Data.Models\obj\Debug\netstandard2.1\WorkAndTravel.Data.Models.pdb

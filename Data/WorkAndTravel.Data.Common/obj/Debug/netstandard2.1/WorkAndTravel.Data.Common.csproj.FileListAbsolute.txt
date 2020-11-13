@@ -1,0 +1,9 @@
+C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Data\WorkAndTravel.Data.Common\bin\Debug\netstandard2.1\WorkAndTravel.Data.Common.deps.json
+C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Data\WorkAndTravel.Data.Common\bin\Debug\netstandard2.1\WorkAndTravel.Data.Common.dll
+C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Data\WorkAndTravel.Data.Common\bin\Debug\netstandard2.1\WorkAndTravel.Data.Common.pdb
+C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Data\WorkAndTravel.Data.Common\obj\Debug\netstandard2.1\WorkAndTravel.Data.Common.csprojAssemblyReference.cache
+C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Data\WorkAndTravel.Data.Common\obj\Debug\netstandard2.1\WorkAndTravel.Data.Common.csproj.CoreCompileInputs.cache
+C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Data\WorkAndTravel.Data.Common\obj\Debug\netstandard2.1\WorkAndTravel.Data.Common.AssemblyInfoInputs.cache
+C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Data\WorkAndTravel.Data.Common\obj\Debug\netstandard2.1\WorkAndTravel.Data.Common.AssemblyInfo.cs
+C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Data\WorkAndTravel.Data.Common\obj\Debug\netstandard2.1\WorkAndTravel.Data.Common.dll
+C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Data\WorkAndTravel.Data.Common\obj\Debug\netstandard2.1\WorkAndTravel.Data.Common.pdb

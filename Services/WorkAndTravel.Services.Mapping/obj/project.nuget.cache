@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "A5kzCjW4BZ8hbLcxxIs5IZ4NdstUgxmgTOeO3Rt7wH42PZr0B46pZzkDqBq4WPzrFf64iEH41SLPn0Ji9kF1WA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Simov\\Desktop\\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\\Services\\WorkAndTravel.Services.Mapping\\WorkAndTravel.Services.Mapping.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Simov\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
+    "C:\\Users\\Simov\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\Simov\\.nuget\\packages\\stylecop.analyzers\\1.2.0-beta.205\\stylecop.analyzers.1.2.0-beta.205.nupkg.sha512",
+    "C:\\Users\\Simov\\.nuget\\packages\\stylecop.analyzers.unstable\\1.2.0.205\\stylecop.analyzers.unstable.1.2.0.205.nupkg.sha512",
+    "C:\\Users\\Simov\\.nuget\\packages\\system.reflection.emit\\4.7.0\\system.reflection.emit.4.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}
