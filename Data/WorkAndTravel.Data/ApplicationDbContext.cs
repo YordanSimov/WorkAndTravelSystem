@@ -37,11 +37,7 @@
 
         public DbSet<Rating> Ratings { get; set; }
 
-        public DbSet<Requirement> Requirements { get; set; }
-
         public DbSet<Image> Images { get; set; }
-
-        public DbSet<WorkPostRequirement> WorkPostRequirements { get; set; }
 
         public override int SaveChanges() => this.SaveChanges(true);
 

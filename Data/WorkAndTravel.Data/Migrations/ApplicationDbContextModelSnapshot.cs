@@ -402,35 +402,6 @@ namespace WorkAndTravel.Data.Migrations
                     b.ToTable("Ratings");
                 });
 
-            modelBuilder.Entity("WorkAndTravel.Data.Models.Requirement", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("CreatedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("DeletedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime?>("ModifiedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Text")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("IsDeleted");
-
-                    b.ToTable("Requirements");
-                });
-
             modelBuilder.Entity("WorkAndTravel.Data.Models.WorkPost", b =>
                 {
                     b.Property<int>("Id")
@@ -479,6 +450,10 @@ namespace WorkAndTravel.Data.Migrations
                     b.Property<int>("RatingId")
                         .HasColumnType("int");
 
+                    b.Property<string>("Requirement")
+                        .HasColumnType("nvarchar(300)")
+                        .HasMaxLength(300);
+
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(80)")
                         .HasMaxLength(80);
@@ -499,28 +474,6 @@ namespace WorkAndTravel.Data.Migrations
                     b.HasIndex("IsDeleted");
 
                     b.ToTable("WorkPosts");
-                });
-
-            modelBuilder.Entity("WorkAndTravel.Data.Models.WorkPostRequirement", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("RequirementId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("WorkPostId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("RequirementId");
-
-                    b.HasIndex("WorkPostId");
-
-                    b.ToTable("WorkPostRequirements");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -643,21 +596,6 @@ namespace WorkAndTravel.Data.Migrations
                     b.HasOne("WorkAndTravel.Data.Models.Country", "Country")
                         .WithMany("WorkPost")
                         .HasForeignKey("CountryId");
-                });
-
-            modelBuilder.Entity("WorkAndTravel.Data.Models.WorkPostRequirement", b =>
-                {
-                    b.HasOne("WorkAndTravel.Data.Models.Requirement", "Requirement")
-                        .WithMany("WorkPostRequirement")
-                        .HasForeignKey("RequirementId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("WorkAndTravel.Data.Models.WorkPost", "WorkPost")
-                        .WithMany("WorkPostRequirement")
-                        .HasForeignKey("WorkPostId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

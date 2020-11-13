@@ -9,7 +9,6 @@
     {
         public WorkPost()
         {
-            this.WorkPostRequirement = new HashSet<WorkPostRequirement>();
             this.Image = new HashSet<Image>();
             this.Rating = new HashSet<Rating>();
         }
@@ -31,8 +30,6 @@
 
         public int? PaymentPerDay { get; set; }
 
-        public virtual ICollection<WorkPostRequirement> WorkPostRequirement { get; set; }
-
         public int RatingId { get; set; }
 
         public virtual ICollection<Rating> Rating { get; set; }
@@ -50,5 +47,9 @@
         public virtual Country Country { get; set; }
 
         public virtual Address Address { get; set; }
+
+        [MaxLength(300)]
+
+        public string Requirement { get; set; }
     }
 }

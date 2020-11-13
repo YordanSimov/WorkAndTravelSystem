@@ -2,16 +2,6 @@
 {
     using System.Reflection;
 
-    using WorkAndTravel.Data;
-    using WorkAndTravel.Data.Common;
-    using WorkAndTravel.Data.Common.Repositories;
-    using WorkAndTravel.Data.Models;
-    using WorkAndTravel.Data.Repositories;
-    using WorkAndTravel.Data.Seeding;
-    using WorkAndTravel.Services.Mapping;
-    using WorkAndTravel.Services.Messaging;
-    using WorkAndTravel.Web.ViewModels;
-
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Http;
@@ -20,6 +10,16 @@
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Hosting;
+    using WorkAndTravel.Data;
+    using WorkAndTravel.Data.Common;
+    using WorkAndTravel.Data.Common.Repositories;
+    using WorkAndTravel.Data.Models;
+    using WorkAndTravel.Data.Repositories;
+    using WorkAndTravel.Data.Seeding;
+    using WorkAndTravel.Services.Data;
+    using WorkAndTravel.Services.Mapping;
+    using WorkAndTravel.Services.Messaging;
+    using WorkAndTravel.Web.ViewModels;
 
     public class Startup
     {
@@ -62,6 +62,8 @@
 
             // Application services
             services.AddTransient<IEmailSender, NullMessageSender>();
+            services.AddTransient<ICategoriesService, CategoriesService>();
+            services.AddTransient<ICountriesService, CountriesService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
