@@ -14,3 +14,5 @@ C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Se
 C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Services\WorkAndTravel.Services.Data\obj\Debug\netstandard2.1\WorkAndTravel.Services.Data.csproj.CopyComplete
 C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Services\WorkAndTravel.Services.Data\obj\Debug\netstandard2.1\WorkAndTravel.Services.Data.dll
 C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Services\WorkAndTravel.Services.Data\obj\Debug\netstandard2.1\WorkAndTravel.Services.Data.pdb
+C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Services\WorkAndTravel.Services.Data\bin\Debug\netstandard2.1\WorkAndTravel.Web.ViewModels.dll
+C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Services\WorkAndTravel.Services.Data\bin\Debug\netstandard2.1\WorkAndTravel.Web.ViewModels.pdb

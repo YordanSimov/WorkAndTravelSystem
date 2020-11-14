@@ -12,7 +12,8 @@
           "StyleCop.Analyzers": "1.2.0-beta.205",
           "WorkAndTravel.Data.Common": "1.0.0",
           "WorkAndTravel.Data.Models": "1.0.0",
-          "WorkAndTravel.Services.Mapping": "1.0.0"
+          "WorkAndTravel.Services.Mapping": "1.0.0",
+          "WorkAndTravel.Web.ViewModels": "1.0.0"
         },
         "runtime": {
           "WorkAndTravel.Services.Data.dll": {}
@@ -387,6 +388,15 @@
         "runtime": {
           "WorkAndTravel.Services.Mapping.dll": {}
         }
+      },
+      "WorkAndTravel.Web.ViewModels/1.0.0": {
+        "dependencies": {
+          "WorkAndTravel.Data.Models": "1.0.0",
+          "WorkAndTravel.Services.Mapping": "1.0.0"
+        },
+        "runtime": {
+          "WorkAndTravel.Web.ViewModels.dll": {}
+        }
       }
     }
   },
@@ -652,6 +662,11 @@
       "sha512": ""
     },
     "WorkAndTravel.Services.Mapping/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "WorkAndTravel.Web.ViewModels/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

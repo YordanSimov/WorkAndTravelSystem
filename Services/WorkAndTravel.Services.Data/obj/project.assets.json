@@ -436,6 +436,20 @@
         "runtime": {
           "bin/placeholder/WorkAndTravel.Services.Mapping.dll": {}
         }
+      },
+      "WorkAndTravel.Web.ViewModels/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "dependencies": {
+          "WorkAndTravel.Data.Models": "1.0.0",
+          "WorkAndTravel.Services.Mapping": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/WorkAndTravel.Web.ViewModels.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/WorkAndTravel.Web.ViewModels.dll": {}
+        }
       }
     }
   },
@@ -1308,6 +1322,11 @@
       "type": "project",
       "path": "../WorkAndTravel.Services.Mapping/WorkAndTravel.Services.Mapping.csproj",
       "msbuildProject": "../WorkAndTravel.Services.Mapping/WorkAndTravel.Services.Mapping.csproj"
+    },
+    "WorkAndTravel.Web.ViewModels/1.0.0": {
+      "type": "project",
+      "path": "../../Web/WorkAndTravel.Web.ViewModels/WorkAndTravel.Web.ViewModels.csproj",
+      "msbuildProject": "../../Web/WorkAndTravel.Web.ViewModels/WorkAndTravel.Web.ViewModels.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -1315,7 +1334,8 @@
       "StyleCop.Analyzers >= 1.2.0-beta.205",
       "WorkAndTravel.Data.Common >= 1.0.0",
       "WorkAndTravel.Data.Models >= 1.0.0",
-      "WorkAndTravel.Services.Mapping >= 1.0.0"
+      "WorkAndTravel.Services.Mapping >= 1.0.0",
+      "WorkAndTravel.Web.ViewModels >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -1352,6 +1372,9 @@
             },
             "C:\\Users\\Simov\\Desktop\\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\\Services\\WorkAndTravel.Services.Mapping\\WorkAndTravel.Services.Mapping.csproj": {
               "projectPath": "C:\\Users\\Simov\\Desktop\\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\\Services\\WorkAndTravel.Services.Mapping\\WorkAndTravel.Services.Mapping.csproj"
+            },
+            "C:\\Users\\Simov\\Desktop\\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\\Web\\WorkAndTravel.Web.ViewModels\\WorkAndTravel.Web.ViewModels.csproj": {
+              "projectPath": "C:\\Users\\Simov\\Desktop\\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\\Web\\WorkAndTravel.Web.ViewModels\\WorkAndTravel.Web.ViewModels.csproj"
             }
           }
         }

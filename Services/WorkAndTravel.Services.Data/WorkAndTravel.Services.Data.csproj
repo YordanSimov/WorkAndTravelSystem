@@ -21,6 +21,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Data\WorkAndTravel.Data.Common\WorkAndTravel.Data.Common.csproj" />
     <ProjectReference Include="..\..\Data\WorkAndTravel.Data.Models\WorkAndTravel.Data.Models.csproj" />
+    <ProjectReference Include="..\..\Web\WorkAndTravel.Web.ViewModels\WorkAndTravel.Web.ViewModels.csproj" />
     <ProjectReference Include="..\WorkAndTravel.Services.Mapping\WorkAndTravel.Services.Mapping.csproj" />
   </ItemGroup>
 

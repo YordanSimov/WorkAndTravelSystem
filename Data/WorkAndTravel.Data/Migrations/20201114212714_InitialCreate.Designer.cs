@@ -10,7 +10,7 @@ using WorkAndTravel.Data;
 namespace WorkAndTravel.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20201113220941_InitialCreate")]
+    [Migration("20201114212714_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -311,19 +311,19 @@ namespace WorkAndTravel.Data.Migrations
                     b.Property<int>("CountryId")
                         .HasColumnType("int");
 
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("ModifiedOn")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(20)")
                         .HasMaxLength(20);
 
-                    b.Property<int>("WorkPostId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.HasIndex("CountryId");
-
-                    b.HasIndex("WorkPostId")
-                        .IsUnique();
 
                     b.ToTable("Cities");
                 });
@@ -414,17 +414,20 @@ namespace WorkAndTravel.Data.Migrations
                     b.Property<string>("AddedByUserId")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<int?>("AddressId")
+                    b.Property<int>("AddressId")
                         .HasColumnType("int");
 
                     b.Property<int>("CategoryId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CityId")
                         .HasColumnType("int");
 
                     b.Property<string>("Comment")
                         .HasColumnType("nvarchar(300)")
                         .HasMaxLength(300);
 
-                    b.Property<int?>("CountryId")
+                    b.Property<int>("CountryId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("CreatedOn")
@@ -470,6 +473,8 @@ namespace WorkAndTravel.Data.Migrations
                     b.HasIndex("AddressId");
 
                     b.HasIndex("CategoryId");
+
+                    b.HasIndex("CityId");
 
                     b.HasIndex("CountryId");
 
@@ -545,12 +550,6 @@ namespace WorkAndTravel.Data.Migrations
                         .HasForeignKey("CountryId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
-
-                    b.HasOne("WorkAndTravel.Data.Models.WorkPost", "WorkPost")
-                        .WithOne("City")
-                        .HasForeignKey("WorkAndTravel.Data.Models.City", "WorkPostId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("WorkAndTravel.Data.Models.Image", b =>
@@ -586,8 +585,10 @@ namespace WorkAndTravel.Data.Migrations
                         .HasForeignKey("AddedByUserId");
 
                     b.HasOne("WorkAndTravel.Data.Models.Address", "Address")
-                        .WithMany()
-                        .HasForeignKey("AddressId");
+                        .WithMany("WorkPost")
+                        .HasForeignKey("AddressId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
                     b.HasOne("WorkAndTravel.Data.Models.Category", "Category")
                         .WithMany("WorkPost")
@@ -595,9 +596,17 @@ namespace WorkAndTravel.Data.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
+                    b.HasOne("WorkAndTravel.Data.Models.City", "City")
+                        .WithMany("WorkPost")
+                        .HasForeignKey("CityId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
                     b.HasOne("WorkAndTravel.Data.Models.Country", "Country")
                         .WithMany("WorkPost")
-                        .HasForeignKey("CountryId");
+                        .HasForeignKey("CountryId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

@@ -42,9 +42,15 @@
 
         public virtual Category Category { get; set; }
 
+        public int CityId { get; set; }
+
         public virtual City City { get; set; }
 
+        public int CountryId { get; set; }
+
         public virtual Country Country { get; set; }
+
+        public int AddressId { get; set; }
 
         public virtual Address Address { get; set; }
 

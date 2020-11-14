@@ -2,22 +2,20 @@
 {
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using WorkAndTravel.Data.Common.Models;
 
-    public class City
+    public class City : BaseModel<int>
     {
         public City()
         {
             this.Address = new HashSet<Address>();
+            this.WorkPost = new HashSet<WorkPost>();
         }
-
-        public int Id { get; set; }
 
         [MaxLength(20)]
         public string Name { get; set; }
 
-        public int WorkPostId { get; set; }
-
-        public virtual WorkPost WorkPost { get; set; }
+        public virtual ICollection<WorkPost> WorkPost { get; set; }
 
         public int CountryId { get; set; }
 

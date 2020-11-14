@@ -32,12 +32,13 @@
         [Display(Name = "Country")]
         public int CountryId { get; set; }
 
+        [Required]
         public string Address { get; set; }
 
         [MinLength(10)]
         [Required]
         [Display(Name = "Our requirements and what we expect")]
-        public string Requirements { get; set; }
+        public string Requirement { get; set; }
 
         public IEnumerable<KeyValuePair<string,string>> CountryItems { get; set; }
 

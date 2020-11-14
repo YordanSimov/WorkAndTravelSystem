@@ -1711,7 +1711,8 @@
         "dependencies": {
           "WorkAndTravel.Data.Common": "1.0.0",
           "WorkAndTravel.Data.Models": "1.0.0",
-          "WorkAndTravel.Services.Mapping": "1.0.0"
+          "WorkAndTravel.Services.Mapping": "1.0.0",
+          "WorkAndTravel.Web.ViewModels": "1.0.0"
         },
         "compile": {
           "bin/placeholder/WorkAndTravel.Services.Data.dll": {}
@@ -1744,6 +1745,20 @@
         },
         "runtime": {
           "bin/placeholder/WorkAndTravel.Services.Messaging.dll": {}
+        }
+      },
+      "WorkAndTravel.Web.ViewModels/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "dependencies": {
+          "WorkAndTravel.Data.Models": "1.0.0",
+          "WorkAndTravel.Services.Mapping": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/WorkAndTravel.Web.ViewModels.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/WorkAndTravel.Web.ViewModels.dll": {}
         }
       }
     }
@@ -6174,6 +6189,11 @@
       "type": "project",
       "path": "../../Services/WorkAndTravel.Services.Messaging/WorkAndTravel.Services.Messaging.csproj",
       "msbuildProject": "../../Services/WorkAndTravel.Services.Messaging/WorkAndTravel.Services.Messaging.csproj"
+    },
+    "WorkAndTravel.Web.ViewModels/1.0.0": {
+      "type": "project",
+      "path": "../../Web/WorkAndTravel.Web.ViewModels/WorkAndTravel.Web.ViewModels.csproj",
+      "msbuildProject": "../../Web/WorkAndTravel.Web.ViewModels/WorkAndTravel.Web.ViewModels.csproj"
     }
   },
   "projectFileDependencyGroups": {
