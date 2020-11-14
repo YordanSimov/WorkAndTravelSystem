@@ -1,16 +1,32 @@
 ﻿namespace WorkAndTravel.Web.Controllers
 {
-    using System.Diagnostics;
 
-    using WorkAndTravel.Web.ViewModels;
+
+    using System.Diagnostics;
+    using System.Linq;
 
     using Microsoft.AspNetCore.Mvc;
+    using WorkAndTravel.Data;
+    using WorkAndTravel.Data.Common.Repositories;
+    using WorkAndTravel.Data.Models;
+    using WorkAndTravel.Services.Data;
+    using WorkAndTravel.Web.ViewModels;
+    using WorkAndTravel.Web.ViewModels.Home;
 
     public class HomeController : BaseController
     {
+        private readonly IGetCountsService getCountsService;
+
+        public HomeController(IGetCountsService getCountsService)
+        {
+            this.getCountsService = getCountsService;
+        }
+
         public IActionResult Index()
         {
-            return this.View();
+            var viewModel = this.getCountsService.GetCounts();
+
+            return this.View(viewModel);
         }
 
         public IActionResult Privacy()

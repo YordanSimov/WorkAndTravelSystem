@@ -23,4 +23,8 @@
     <ProjectReference Include="..\..\Services\WorkAndTravel.Services.Mapping\WorkAndTravel.Services.Mapping.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Administration\Dashboard\" />
+  </ItemGroup>
+
 </Project>

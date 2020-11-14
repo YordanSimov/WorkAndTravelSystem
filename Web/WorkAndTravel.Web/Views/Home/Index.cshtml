@@ -1,8 +1,19 @@
 ﻿@using WorkAndTravel.Common
+@model WorkAndTravel.Web.ViewModels.Home.IndexViewModel
 @{
     this.ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
     <h1 class="display-4">Welcome to @GlobalConstants.SystemName!</h1>
+
+    <div class="col-md-4 offset-md-4">
+        <p>We provide work opportunities all over the EU: </p>
+        <ul class="list-group">
+            <li class="list-group-item">Work Posts: @Model.WorkPostsCount</li>
+            <li class="list-group-item">Types of work: @Model.CategoriesCount </li>
+            <li class="list-group-item">Countries: @Model.CountriesCount </li>
+            <li class="list-group-item">Cities: @Model.CitiesCount</li>
+        </ul>
+    </div>
 </div>
