@@ -2,7 +2,7 @@
 @{
     this.ViewData["Title"] = "Create new post";
     var categoryItems = this.Model.CategoryItems.Select(x => new SelectListItem(x.Value, x.Key));
-    var countryItems = this.Model.CountryItems.OrderBy(x=>x.Value).Select(x => new SelectListItem(x.Value, x.Key));
+    var countryItems = this.Model.CountryItems.Select(x => new SelectListItem(x.Value, x.Key));
 
 }
 

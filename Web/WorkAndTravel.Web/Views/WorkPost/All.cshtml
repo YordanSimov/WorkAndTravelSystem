@@ -1,0 +1,39 @@
+﻿@model WorkAndTravel.Web.ViewModels.WorkPosts.WorkPostsListViewModel
+@{
+    this.ViewData["Title"] = "All workposts page";
+}
+
+<h1>@this.ViewData["Title"]</h1>
+<hr />
+<div class="row">
+    @foreach(var post in this.Model.WorkPosts)
+    {
+        <div class="card-deck card-columns media col-md-3">
+            <div class="card">
+                <img class="card-img-top" src="@post.RemoteImageUrl">
+                <div class="card-body">
+                    <h5 class="card-title">@post.Title</h5>
+                    <p class="card-text">@post.Description</p>
+                    <p class="card-text"><small class="text-muted">@post.CategoryName</small></p>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+        <hr />
+        <nav aria-label="...">
+            <ul class="pagination justify-content-center">
+                <li class="page-item @if(!Model.HasPreviousPage) { <text> disabled </text>}">
+                    <a class="page-link" asp-action="All" asp-route-id="@Model.PreviousPageNumber">Previous</a>
+                </li>
+                <li class="page-item active">
+                    <span class="page-link">
+                        @Model.PageNumber
+                        <span class="sr-only">(current)</span>
+                    </span>
+                </li>
+                <li class="page-item">
+                    <a class="page-link @if(!Model.HasNextPage) { <text> disabled </text>}"" asp-action="All" asp-route-id="@Model.NextPageNumber">Next</a>
+                </li>
+            </ul>
+        </nav>

@@ -1,11 +1,14 @@
 ﻿namespace WorkAndTravel.Services.Data
 {
+    using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
 
     using WorkAndTravel.Data.Common.Repositories;
     using WorkAndTravel.Data.Models;
+    using WorkAndTravel.Services.Mapping;
     using WorkAndTravel.Web.ViewModels;
+    using WorkAndTravel.Web.ViewModels.WorkPosts;
 
     public class WorkPostsService : IWorkPostsService
     {
@@ -23,7 +26,7 @@
             this.cityRepository = cityRepository;
         }
 
-        public async Task CreateAsync(CreateWorkPostsInputModel input)
+        public async Task CreateAsync(CreateWorkPostsInputModel input, string userId)
         {
             var city = this.cityRepository.All().FirstOrDefault(x => x.Name == input.City);
             if (city == null)
@@ -48,10 +51,25 @@
                 PaymentPerDay = input.PaymentPerDay,
                 WorkLengthDescription = input.WorkLengthDescription,
                 CategoryId = input.CategoryId,
+                AddedByUserId = userId,
             };
 
             await this.workPostRepository.AddAsync(workPost);
             await this.workPostRepository.SaveChangesAsync();
+        }
+
+        public IEnumerable<T> GetAll<T>(int page, int postsPerPage = 12)
+        {
+            var posts = this.workPostRepository.AllAsNoTracking().OrderByDescending(x => x.Id)
+                .Skip((page - 1) * postsPerPage).Take(postsPerPage)
+                .To<T>().ToList();
+
+            return posts;
+        }
+
+        public int GetCount()
+        {
+            return this.workPostRepository.All().Count();
         }
     }
 }

@@ -10894,6 +10894,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {
             "C:\\Users\\Simov\\Desktop\\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\\Web\\WorkAndTravel.Web\\WorkAndTravel.Web.csproj": {
               "projectPath": "C:\\Users\\Simov\\Desktop\\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\\Web\\WorkAndTravel.Web\\WorkAndTravel.Web.csproj"
@@ -10909,6 +10910,7 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "Microsoft.AspNetCore.Mvc.Testing": {
             "target": "Package",
@@ -10961,7 +10963,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

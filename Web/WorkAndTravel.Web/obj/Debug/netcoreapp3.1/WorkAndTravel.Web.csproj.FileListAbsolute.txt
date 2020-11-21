@@ -2,7 +2,6 @@ C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\We
 C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Web\WorkAndTravel.Web\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Web\WorkAndTravel.Web\bin\Debug\netcoreapp3.1\bundleconfig.json
 C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Web\WorkAndTravel.Web\bin\Debug\netcoreapp3.1\libman.json
-C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Web\WorkAndTravel.Web\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Web\WorkAndTravel.Web\bin\Debug\netcoreapp3.1\WorkAndTravel.Web.StaticWebAssets.xml
 C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Web\WorkAndTravel.Web\bin\Debug\netcoreapp3.1\WorkAndTravel.Web.exe
 C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Web\WorkAndTravel.Web\bin\Debug\netcoreapp3.1\WorkAndTravel.Web.deps.json
@@ -455,3 +454,5 @@ C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\We
 C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Web\WorkAndTravel.Web\obj\Debug\netcoreapp3.1\WorkAndTravel.Web.pdb
 C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Web\WorkAndTravel.Web\obj\Debug\netcoreapp3.1\WorkAndTravel.Web.genruntimeconfig.cache
 C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Web\WorkAndTravel.Web\obj\Debug\netcoreapp3.1\Razor\Views\WorkPost\Create.cshtml.g.cs
+C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Web\WorkAndTravel.Web\obj\Debug\netcoreapp3.1\scopedcss\bundle\WorkAndTravel.Web.styles.css
+C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Web\WorkAndTravel.Web\obj\Debug\netcoreapp3.1\Razor\Views\WorkPost\All.cshtml.g.cs

@@ -30,11 +30,7 @@
 
         public int? PaymentPerDay { get; set; }
 
-        public int RatingId { get; set; }
-
         public virtual ICollection<Rating> Rating { get; set; }
-
-        public int ImageId { get; set; }
 
         public virtual ICollection<Image> Image { get; set; }
 
