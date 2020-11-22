@@ -1,17 +1,10 @@
 ﻿namespace WorkAndTravel.Web.Controllers
 {
-
-
     using System.Diagnostics;
-    using System.Linq;
 
     using Microsoft.AspNetCore.Mvc;
-    using WorkAndTravel.Data;
-    using WorkAndTravel.Data.Common.Repositories;
-    using WorkAndTravel.Data.Models;
     using WorkAndTravel.Services.Data;
     using WorkAndTravel.Web.ViewModels;
-    using WorkAndTravel.Web.ViewModels.Home;
 
     public class HomeController : BaseController
     {

@@ -42,7 +42,6 @@
         [Authorize]
         public async Task<IActionResult> Create(CreateWorkPostsInputModel input)
         {
-
             if (!this.ModelState.IsValid)
             {
                 input.CategoryItems = this.categoriesService.GetAllAsKeyValuePairs();
@@ -59,6 +58,11 @@
 
         public IActionResult All(int id = 1)
         {
+            if (id <= 0)
+            {
+                return this.NotFound();
+            }
+
             const int ItemsPerPage = 12;
             var viewModel = new WorkPostsListViewModel
             {

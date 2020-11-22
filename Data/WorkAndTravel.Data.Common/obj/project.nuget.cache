@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "wen8AV4lXMEXWR4GLexJOZ6J9bN8UG+l/rIJ7CKPm68FsoT+xeZS6Dkr8hc+D+9FV2mTJMXXi5fo3HgYCj3iAw==",
+  "dgSpecHash": "weaMgUrcuiDYhrrZd5sKm0Bm4nq5Q1JkIp6f0Zjgqvcl9XsVXbY1p700gfvsQ+iN0NO5poWLVs8pxP33dQEvFw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Simov\\Desktop\\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\\Data\\WorkAndTravel.Data.Common\\WorkAndTravel.Data.Common.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Simov\\.nuget\\packages\\stylecop.analyzers\\1.2.0-beta.205\\stylecop.analyzers.1.2.0-beta.205.nupkg.sha512",
     "C:\\Users\\Simov\\.nuget\\packages\\stylecop.analyzers.unstable\\1.2.0.205\\stylecop.analyzers.unstable.1.2.0.205.nupkg.sha512",
-    "C:\\Users\\Simov\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\system.componentmodel.annotations.4.7.0.nupkg.sha512"
+    "C:\\Users\\Simov\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512"
   ],
   "logs": []
 }
