@@ -1,0 +1,97 @@
+﻿@model WorkAndTravel.Web.ViewModels.WorkPosts.SingleWorkPostViewModel
+@{ 
+    this.ViewData["Title"] = Model.Title;
+}
+<section class="site-section">
+    <div class="container">
+        <h1 class="text-primary">@this.ViewData["Title"]</h1>
+        <div class=" row mb-4">
+            <div class="col-xl-9 col-12">
+                            <ul class="entry-meta">
+                                <li class="ml-0 mr-2 mb-2"><i class="fas fa-user"></i> @Model.AddedByUserUserName</li>
+                                <li class="ml-0 mr-2 mb-2"><i class="fas fa-briefcase"></i> @Model.CategoryName</li>
+                                <li class="m-2"><i class="fas fa-globe"></i> @Model.CountryName, @Model.CityName</li>
+                            <li class="single-meta">
+                                <ul class="item-rating">
+                                    <li class="star-fill" data-vote="1"><i class="fas fa-star"></i></li>
+                                    <li class="star-fill" data-vote="2"><i class="fas fa-star"></i></li>
+                                    <li class="star-fill" data-vote="3"><i class="fas fa-star"></i></li>
+                                    <li class="star-fill" data-vote="4"><i class="fas fa-star"></i></li>
+                                    <li class="star-fill" data-vote="5"><i class="fas fa-star"></i></li>
+                                    <li><span >1</span><span> / 5</span> </li>
+                                </ul>
+                            </li>
+                            </ul>
+                </div>
+        </div>
+    </div>
+    <div class="item-figure">
+        <img class="img-fluid w-50 border mb-2 mt-2" src="@Model.RemoteImageUrl" alt="@Model.Title" />
+    </div>
+    <div class="item-feature">
+        <div class="col-lg-8">
+            <div class="mb-5">
+                <h2 class="h4 d-flex align-items-center mb-4 text-primary">
+                    <span class="icon-align-left mr-3">Job Description</span>
+                </h2>
+                <p>
+                    @Model.Description
+                </p>
+            </div>
+            <div class="mb-5">
+                <h3 class="h5 d-flex align-items-center mb-4 text-primary"><span class="icon-rocket mr-3">Information about your responsibilities</span></h3>
+                <ul class="list-unstyled m-0 p-0">
+                    <li class="d-flex align-items-start mb-2">
+                        <span class="icon-check_circle mr-2 text-muted"></span><span>
+                            @Model.WorkLengthDescription
+                        </span>
+                    </li>
+                </ul>
+            </div>
+            <div class="mb-5">
+                <h3 class="h5 d-flex align-items-center mb-4 text-primary">
+                    <span class="icon-book mr-3">Requirements</span>
+                </h3>
+                <ul class="list-unstyled m-0 p-0">
+                    <li class="d-flex align-items-start mb-2">
+                        <span class="icon-check_circle mr-2 text-muted"></span><span>
+                            @Model.Requirement
+                        </span>
+                    </li>
+                </ul>
+            </div>
+            <div class="mb-5">
+                <h3 class="h5 d-flex align-items-center mb-4 text-primary">
+                    <span class="icon-book mr-3">What we provide</span>
+                </h3>
+                <ul class="list-unstyled m-0 p-0">
+                    <li class="d-flex align-items-start mb-2">
+                        <span class="icon-check_circle mr-2 text-muted"></span><span>
+                           Lorem ahshdh ashdas da ashdhahsa
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="bg-light p-3 border rounded mb-4">
+                <h3 class="text-primary  mt-3 h5 pl-3 mb-3 ">Post Summary</h3>
+                <ul class="list-unstyled pl-3 mb-0">
+                    <li class="mb-2"><i class="fas fa-calendar-alt"></i><strong class="text-black"> Published on:</strong> @Model.CreatedOn.ToShortDateString()</li>
+                    <li class="mb-2"><i class="fas fa-clock"></i><strong class="text-black"> Length of work:</strong> @Model.WorkLengthDescription</li>
+                    <li class="star-fill mb-2"><i class="fas fa-star"></i><strong class="text-black"> Our rating:</strong></li>
+                    <li class="mb-2"><i class="fas fa-location-arrow"></i><strong class="text-black"> Job Location:</strong> @Model.AddressName</li>
+                    <li class="mb-2"><i class="fas fa-wallet"></i><strong class="text-black"> Salary:</strong> @Model.PaymentPerDay</li>
+                    <li class="mb-2"><i class="fas fa-envelope"></i><strong class="text-black"> Contact us:</strong> @Model.AddedByUserUserName</li>
+                </ul>
+                <div>
+                    <div class="row">
+                        <div class="col-6">
+                            <a href="#" class="btn btn-block btn-primary btn-md mt-3 ml-5">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

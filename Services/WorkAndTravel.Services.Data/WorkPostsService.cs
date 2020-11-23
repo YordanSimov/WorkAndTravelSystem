@@ -13,7 +13,7 @@
 
     public class WorkPostsService : IWorkPostsService
     {
-        private readonly string[] AllowedExtensions = new[] { "jpg", "png", "gif" };
+        private readonly string[] allowedExtensions = new[] { "jpg", "png", "gif" };
         private readonly IDeletableEntityRepository<WorkPost> workPostRepository;
         private readonly IRepository<Address> addressRepository;
         private readonly IRepository<City> cityRepository;
@@ -62,7 +62,7 @@
             foreach (var image in input.Images)
             {
                 var extension = Path.GetExtension(image.FileName).TrimStart('.');
-                if (!this.AllowedExtensions.Any(x => extension.EndsWith(x)))
+                if (!this.allowedExtensions.Any(x => extension.EndsWith(x)))
                 {
                     throw new Exception($"Invalid image extension {extension}");
                 }
@@ -91,6 +91,11 @@
                 .To<T>().ToList();
 
             return posts;
+        }
+
+        public T GetById<T>(int Id)
+        {
+           return this.workPostRepository.AllAsNoTracking().Where(x => x.Id == Id).To<T>().FirstOrDefault();
         }
 
         public int GetCount()

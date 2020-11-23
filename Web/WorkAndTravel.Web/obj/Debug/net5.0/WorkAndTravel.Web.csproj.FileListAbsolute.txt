@@ -465,3 +465,4 @@ C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\We
 C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Web\WorkAndTravel.Web\obj\Debug\net5.0\ref\WorkAndTravel.Web.dll
 C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Web\WorkAndTravel.Web\obj\Debug\net5.0\WorkAndTravel.Web.pdb
 C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Web\WorkAndTravel.Web\obj\Debug\net5.0\WorkAndTravel.Web.genruntimeconfig.cache
+C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Web\WorkAndTravel.Web\obj\Debug\net5.0\Razor\Views\WorkPost\ById.cshtml.g.cs

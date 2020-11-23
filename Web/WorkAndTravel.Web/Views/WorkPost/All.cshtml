@@ -1,6 +1,6 @@
 ﻿@model WorkAndTravel.Web.ViewModels.WorkPosts.WorkPostsListViewModel
 @{
-    this.ViewData["Title"] = "All workposts page" + Model.PageNumber;
+    this.ViewData["Title"] = "All workposts page";
 }
 
 <h1>@this.ViewData["Title"]</h1>
@@ -12,8 +12,8 @@
             <div class="card">
                 <img src="@post.RemoteImageUrl" class="card-img-top" >
                 <div class="card-body">
-                    <h5 class="card-title">@post.Title</h5>
-                    <p class="card-text">@post.Description</p>
+                    <h5 class="card-title"><a asp-action="ById" asp-route-id="@post.Id">@post.Title</a></h5>
+                    <p class="card-text ">@post.Description</p>
                     <p class="card-text"><small class="text-muted">@post.CategoryName</small></p>
                 </div>
             </div>

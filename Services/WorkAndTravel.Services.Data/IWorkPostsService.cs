@@ -13,5 +13,7 @@
         IEnumerable<T> GetAll<T>(int page, int postsPerPage = 12);
 
         int GetCount();
+
+        T GetById<T>(int Id);
     }
 }

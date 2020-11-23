@@ -87,5 +87,12 @@
             };
             return this.View(viewModel);
         }
+
+        public IActionResult ById(int Id)
+        {
+            var workPost = this.workPostsService.GetById<SingleWorkPostViewModel>(Id);
+
+            return this.View(workPost);
+        }
     }
 }
