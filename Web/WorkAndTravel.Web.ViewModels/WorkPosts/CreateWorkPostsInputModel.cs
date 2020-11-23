@@ -3,6 +3,8 @@
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
+    using Microsoft.AspNetCore.Http;
+
     public class CreateWorkPostsInputModel
     {
         [MinLength(5)]
@@ -23,8 +25,10 @@
         [Display(Name = "Salary per day (if any)")]
         public int? PaymentPerDay { get; set; }
 
-        [Display(Name ="Type of post")]
+        [Display(Name = "Type of post")]
         public int CategoryId { get; set; }
+
+        public IEnumerable<IFormFile> Images { get; set; }
 
         [Required]
         public string City { get; set; }
@@ -40,7 +44,7 @@
         [Display(Name = "Our requirements and what we expect")]
         public string Requirement { get; set; }
 
-        public IEnumerable<KeyValuePair<string,string>> CountryItems { get; set; }
+        public IEnumerable<KeyValuePair<string, string>> CountryItems { get; set; }
 
         public IEnumerable<KeyValuePair<string, string>> CategoryItems { get; set; }
     }

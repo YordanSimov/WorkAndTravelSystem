@@ -8,7 +8,7 @@
 
     public interface IWorkPostsService
     {
-        Task CreateAsync(CreateWorkPostsInputModel input,string userId);
+        Task CreateAsync(CreateWorkPostsInputModel input, string userId, string imagePath);
 
         IEnumerable<T> GetAll<T>(int page, int postsPerPage = 12);
 

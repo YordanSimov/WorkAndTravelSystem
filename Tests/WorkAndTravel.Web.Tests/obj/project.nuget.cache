@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "MxaZBbLgw40XcRzDqwdEvmrgnGYTK5XFTrgGXFSQZ0omLhcBDx0VacJzXHlBqJA4ez7soguskUPyY2TsVhZYLw==",
+  "dgSpecHash": "lVlgWvXNnCiJwhnQmqbAG9ZcOx8KYure22fH6tTQgrQkNZ+QzXdM3rUHMf2H0CxpxnFbaqC/CrM1J7Xfif/TTw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Simov\\Desktop\\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\\Tests\\WorkAndTravel.Web.Tests\\WorkAndTravel.Web.Tests.csproj",
   "expectedPackageFiles": [
@@ -11,6 +11,7 @@
     "C:\\Users\\Simov\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\5.0.0\\microsoft.aspnetcore.cryptography.keyderivation.5.0.0.nupkg.sha512",
     "C:\\Users\\Simov\\.nuget\\packages\\microsoft.aspnetcore.diagnostics.entityframeworkcore\\5.0.0\\microsoft.aspnetcore.diagnostics.entityframeworkcore.5.0.0.nupkg.sha512",
     "C:\\Users\\Simov\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\Simov\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.0\\microsoft.aspnetcore.http.features.5.0.0.nupkg.sha512",
     "C:\\Users\\Simov\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\5.0.0\\microsoft.aspnetcore.identity.entityframeworkcore.5.0.0.nupkg.sha512",
     "C:\\Users\\Simov\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\5.0.0\\microsoft.aspnetcore.identity.ui.5.0.0.nupkg.sha512",
     "C:\\Users\\Simov\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.extensions\\5.0.0\\microsoft.aspnetcore.mvc.razor.extensions.5.0.0.nupkg.sha512",

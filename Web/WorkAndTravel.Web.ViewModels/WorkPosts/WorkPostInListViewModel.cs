@@ -1,9 +1,12 @@
 ﻿namespace WorkAndTravel.Web.ViewModels.WorkPosts
 {
+    using System.Linq;
+
+    using AutoMapper;
     using WorkAndTravel.Data.Models;
     using WorkAndTravel.Services.Mapping;
 
-    public class WorkPostInListViewModel : IMapFrom<WorkPost>
+    public class WorkPostInListViewModel : IMapFrom<WorkPost>, IHaveCustomMappings
     {
         public string Title { get; set; }
 
@@ -14,5 +17,15 @@
         public string CategoryName { get; set; }
 
         public string RemoteImageUrl { get; set; }
+
+        public void CreateMappings(IProfileExpression configuration)
+        {
+            configuration.CreateMap<WorkPost, WorkPostInListViewModel>()
+                .ForMember(x => x.RemoteImageUrl, opt =>
+                    opt.MapFrom(x =>
+                     x.Images.FirstOrDefault().RemoteImageUrl != null ?
+                     x.Images.FirstOrDefault().RemoteImageUrl :
+                     "/images/workposts/" + x.Images.FirstOrDefault().Id + "." + x.Images.FirstOrDefault().Extension));
+        }
     }
 }

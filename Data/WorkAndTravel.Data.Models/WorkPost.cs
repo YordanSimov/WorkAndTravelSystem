@@ -9,7 +9,7 @@
     {
         public WorkPost()
         {
-            this.Image = new HashSet<Image>();
+            this.Images = new HashSet<Image>();
             this.Rating = new HashSet<Rating>();
         }
 
@@ -32,7 +32,7 @@
 
         public virtual ICollection<Rating> Rating { get; set; }
 
-        public virtual ICollection<Image> Image { get; set; }
+        public virtual ICollection<Image> Images { get; set; }
 
         public int CategoryId { get; set; }
 

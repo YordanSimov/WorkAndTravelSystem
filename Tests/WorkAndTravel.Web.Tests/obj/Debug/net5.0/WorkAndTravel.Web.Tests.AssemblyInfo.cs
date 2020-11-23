@@ -12,9 +12,9 @@ using System;
 using System.Reflection;
 
 [assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap4")]
-[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("WorkAndTravel.Data", "C:\\Users\\Simov\\Desktop\\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\\Dat" +
+[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("WorkAndTravel.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "C:\\Users\\Simov\\Desktop\\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\\Dat" +
     "a\\WorkAndTravel.Data", "WorkAndTravel.Data.csproj", "0")]
-[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("WorkAndTravel.Web", "C:\\Users\\Simov\\Desktop\\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\\Web" +
+[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("WorkAndTravel.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "C:\\Users\\Simov\\Desktop\\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\\Web" +
     "\\WorkAndTravel.Web", "WorkAndTravel.Web.csproj", "0")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("WorkAndTravel.Web.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]

@@ -8,7 +8,7 @@
 
 <h1>@this.ViewData["Title"]</h1>
 
-<form method="post">
+<form method="post" enctype="multipart/form-data">
     <div asp-validation-summary="All"></div>
     <div class="form-group">
         <label asp-for="Title"></label>
@@ -54,6 +54,11 @@
         <label asp-for="Requirement"></label>
         <textarea asp-for="Requirement" class="form-control" rows="7">></textarea>
         <span asp-validation-for="Requirement" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Images"></label>
+        <input asp-for="Images" class="form-control" />
+        <span asp-validation-for="Images" class="text-danger"></span>
     </div>
 
     <input type="submit" class="btn btn-primary" />

@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using WorkAndTravel.Data.Common.Repositories;
-using WorkAndTravel.Data.Models;
-using WorkAndTravel.Web.ViewModels.Home;
-
-namespace WorkAndTravel.Services.Data
+﻿namespace WorkAndTravel.Services.Data
 {
+    using System.Linq;
+
+    using WorkAndTravel.Data.Common.Repositories;
+    using WorkAndTravel.Data.Models;
+    using WorkAndTravel.Web.ViewModels.Home;
+
     public class GetCountsService : IGetCountsService
     {
         private readonly IDeletableEntityRepository<WorkPost> workpostRepository;

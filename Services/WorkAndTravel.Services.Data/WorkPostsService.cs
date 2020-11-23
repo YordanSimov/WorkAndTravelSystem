@@ -1,6 +1,8 @@
 ﻿namespace WorkAndTravel.Services.Data
 {
+    using System;
     using System.Collections.Generic;
+    using System.IO;
     using System.Linq;
     using System.Threading.Tasks;
 
@@ -8,10 +10,10 @@
     using WorkAndTravel.Data.Models;
     using WorkAndTravel.Services.Mapping;
     using WorkAndTravel.Web.ViewModels;
-    using WorkAndTravel.Web.ViewModels.WorkPosts;
 
     public class WorkPostsService : IWorkPostsService
     {
+        private readonly string[] AllowedExtensions = new[] { "jpg", "png", "gif" };
         private readonly IDeletableEntityRepository<WorkPost> workPostRepository;
         private readonly IRepository<Address> addressRepository;
         private readonly IRepository<City> cityRepository;
@@ -26,7 +28,7 @@
             this.cityRepository = cityRepository;
         }
 
-        public async Task CreateAsync(CreateWorkPostsInputModel input, string userId)
+        public async Task CreateAsync(CreateWorkPostsInputModel input, string userId, string imagePath)
         {
             var city = this.cityRepository.All().FirstOrDefault(x => x.Name == input.City);
             if (city == null)
@@ -53,6 +55,30 @@
                 CategoryId = input.CategoryId,
                 AddedByUserId = userId,
             };
+
+            Directory.CreateDirectory($"{imagePath}/workposts/");
+
+            // /wwwroot/images/workpost{id}.{ext}
+            foreach (var image in input.Images)
+            {
+                var extension = Path.GetExtension(image.FileName).TrimStart('.');
+                if (!this.AllowedExtensions.Any(x => extension.EndsWith(x)))
+                {
+                    throw new Exception($"Invalid image extension {extension}");
+                }
+
+                var dbImage = new Image
+                {
+                    AddedByUserId = userId,
+                    WorkPost = workPost,
+                    Extension = extension,
+                };
+                workPost.Images.Add(dbImage);
+
+                var physicalPath = $"{imagePath}/workposts/{dbImage.Id}.{dbImage.Extension}";
+                using Stream fileStream = new FileStream(physicalPath, FileMode.Create);
+                await image.CopyToAsync(fileStream);
+            }
 
             await this.workPostRepository.AddAsync(workPost);
             await this.workPostRepository.SaveChangesAsync();

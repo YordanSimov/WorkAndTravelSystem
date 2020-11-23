@@ -1,10 +1,13 @@
 ﻿namespace WorkAndTravel.Web.Controllers
 {
+    using System;
     using System.Threading.Tasks;
 
     using Microsoft.AspNetCore.Authorization;
+    using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
+    using Microsoft.AspNetCore.Mvc.ModelBinding;
     using WorkAndTravel.Data.Models;
     using WorkAndTravel.Services.Data;
     using WorkAndTravel.Web.ViewModels;
@@ -16,17 +19,20 @@
         private readonly ICountriesService countriesService;
         private readonly IWorkPostsService workPostsService;
         private readonly UserManager<ApplicationUser> userManager;
+        private readonly IWebHostEnvironment environment;
 
         public WorkPostController(
             ICategoriesService categoriesService,
             ICountriesService countriesService,
             IWorkPostsService workPostsService,
-            UserManager<ApplicationUser> userManager)
+            UserManager<ApplicationUser> userManager,
+            IWebHostEnvironment environment)
         {
             this.categoriesService = categoriesService;
             this.countriesService = countriesService;
             this.workPostsService = workPostsService;
             this.userManager = userManager;
+            this.environment = environment;
         }
 
         [Authorize]
@@ -50,7 +56,15 @@
             }
 
             var user = await this.userManager.GetUserAsync(this.User);
-            await this.workPostsService.CreateAsync(input, user.Id);
+
+            try
+            {
+                await this.workPostsService.CreateAsync(input, user.Id, $"{this.environment.WebRootPath}/images");
+            }
+            catch (Exception ex)
+            {
+                this.ModelState.AddModelError(string.Empty, ex.Message);
+            }
 
             // TODO: Redirect to post page
             return this.Redirect("/");
