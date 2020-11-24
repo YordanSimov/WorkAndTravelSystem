@@ -18,7 +18,7 @@ namespace WorkAndTravel.Data.Migrations
                     DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
                     Name = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
-                    ConcurrencyStamp = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ConcurrencyStamp = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -47,7 +47,7 @@ namespace WorkAndTravel.Data.Migrations
                     TwoFactorEnabled = table.Column<bool>(type: "bit", nullable: false),
                     LockoutEnd = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: true),
                     LockoutEnabled = table.Column<bool>(type: "bit", nullable: false),
-                    AccessFailedCount = table.Column<int>(type: "int", nullable: false),
+                    AccessFailedCount = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -244,13 +244,14 @@ namespace WorkAndTravel.Data.Migrations
                     Description = table.Column<string>(type: "nvarchar(300)", maxLength: 300, nullable: true),
                     AddedByUserId = table.Column<string>(type: "nvarchar(450)", nullable: true),
                     Comment = table.Column<string>(type: "nvarchar(300)", maxLength: 300, nullable: true),
-                    WorkLengthDescription = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Responsibility = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     PaymentPerDay = table.Column<int>(type: "int", nullable: true),
                     CategoryId = table.Column<int>(type: "int", nullable: false),
                     CityId = table.Column<int>(type: "int", nullable: false),
                     CountryId = table.Column<int>(type: "int", nullable: false),
                     AddressId = table.Column<int>(type: "int", nullable: false),
                     Requirement = table.Column<string>(type: "nvarchar(300)", maxLength: 300, nullable: true),
+                    Providing = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),

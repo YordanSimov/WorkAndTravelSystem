@@ -26,7 +26,7 @@
         [MaxLength(300)]
         public string Comment { get; set; }
 
-        public string WorkLengthDescription { get; set; }
+        public string Responsibility { get; set; }
 
         public int? PaymentPerDay { get; set; }
 
@@ -53,5 +53,7 @@
         [MaxLength(300)]
 
         public string Requirement { get; set; }
+
+        public string Providing { get; set; }
     }
 }

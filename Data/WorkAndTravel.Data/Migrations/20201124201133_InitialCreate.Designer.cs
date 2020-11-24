@@ -10,7 +10,7 @@ using WorkAndTravel.Data;
 namespace WorkAndTravel.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20201124182058_InitialCreate")]
+    [Migration("20201124201133_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -452,16 +452,19 @@ namespace WorkAndTravel.Data.Migrations
                     b.Property<int?>("PaymentPerDay")
                         .HasColumnType("int");
 
+                    b.Property<string>("Providing")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Requirement")
                         .HasMaxLength(300)
                         .HasColumnType("nvarchar(300)");
 
+                    b.Property<string>("Responsibility")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Title")
                         .HasMaxLength(80)
                         .HasColumnType("nvarchar(80)");
-
-                    b.Property<string>("WorkLengthDescription")
-                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 

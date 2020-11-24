@@ -1,7 +1,5 @@
 ﻿namespace WorkAndTravel.Data.Models
 {
-    using System;
-    using System.ComponentModel.DataAnnotations;
 
     using WorkAndTravel.Data.Common.Models;
 

@@ -13,16 +13,16 @@
 
         [MinLength(40)]
         [Required]
-        [Display(Name = "Description of the work")]
+        [Display(Name = "Description")]
 
         public string Description { get; set; }
 
         [Required]
         [MinLength(5)]
-        [Display(Name = "Working hours description")]
-        public string WorkLengthDescription { get; set; }
+        [Display(Name = "Responsibilities")]
+        public string Responsibility { get; set; }
 
-        [Display(Name = "Salary per day (if any)")]
+        [Display(Name = "Salary per day in dollars (if any)")]
         public int? PaymentPerDay { get; set; }
 
         [Display(Name = "Type of post")]
@@ -41,8 +41,11 @@
 
         [MinLength(10)]
         [Required]
-        [Display(Name = "Our requirements and what we expect")]
+        [Display(Name = "Your requirements")]
         public string Requirement { get; set; }
+
+        [Display(Name = "What you provide")]
+        public string Providing { get; set; }
 
         public IEnumerable<KeyValuePair<string, string>> CountryItems { get; set; }
 

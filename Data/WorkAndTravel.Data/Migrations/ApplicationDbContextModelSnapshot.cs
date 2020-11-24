@@ -450,16 +450,19 @@ namespace WorkAndTravel.Data.Migrations
                     b.Property<int?>("PaymentPerDay")
                         .HasColumnType("int");
 
+                    b.Property<string>("Providing")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Requirement")
                         .HasMaxLength(300)
                         .HasColumnType("nvarchar(300)");
 
+                    b.Property<string>("Responsibility")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Title")
                         .HasMaxLength(80)
                         .HasColumnType("nvarchar(80)");
-
-                    b.Property<string>("WorkLengthDescription")
-                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 

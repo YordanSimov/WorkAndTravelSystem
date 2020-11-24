@@ -26,9 +26,9 @@
         <span asp-validation-for="CategoryId" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <label asp-for="WorkLengthDescription"></label>
-        <input asp-for="WorkLengthDescription" class="form-control" />
-        <span asp-validation-for="WorkLengthDescription" class="text-danger"></span>
+        <label asp-for="Responsibility"></label>
+        <textarea asp-for="Responsibility" class="form-control" rows="5">></textarea>
+        <span asp-validation-for="Responsibility" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label asp-for="PaymentPerDay"></label>
@@ -52,8 +52,13 @@
     </div>
     <div class="form-group">
         <label asp-for="Requirement"></label>
-        <textarea asp-for="Requirement" class="form-control" rows="7">></textarea>
+        <textarea asp-for="Requirement" class="form-control" rows="5">></textarea>
         <span asp-validation-for="Requirement" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Providing"></label>
+        <textarea asp-for="Providing" class="form-control" rows="5">></textarea>
+        <span asp-validation-for="Providing" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label asp-for="Images"></label>

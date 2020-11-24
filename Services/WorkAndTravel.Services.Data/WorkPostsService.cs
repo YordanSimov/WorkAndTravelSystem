@@ -51,9 +51,10 @@
                 Address = address,
                 City = city,
                 PaymentPerDay = input.PaymentPerDay,
-                WorkLengthDescription = input.WorkLengthDescription,
+                Responsibility = input.Responsibility,
                 CategoryId = input.CategoryId,
                 AddedByUserId = userId,
+                Providing = input.Providing,
             };
 
             Directory.CreateDirectory($"{imagePath}/workposts/");
