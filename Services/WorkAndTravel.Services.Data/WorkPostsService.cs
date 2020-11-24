@@ -93,9 +93,9 @@
             return posts;
         }
 
-        public T GetById<T>(int Id)
+        public T GetById<T>(int id)
         {
-           return this.workPostRepository.AllAsNoTracking().Where(x => x.Id == Id).To<T>().FirstOrDefault();
+           return this.workPostRepository.AllAsNoTracking().Where(x => x.Id == id).To<T>().FirstOrDefault();
         }
 
         public int GetCount()

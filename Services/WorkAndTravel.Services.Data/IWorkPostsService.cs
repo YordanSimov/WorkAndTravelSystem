@@ -14,6 +14,6 @@
 
         int GetCount();
 
-        T GetById<T>(int Id);
+        T GetById<T>(int id);
     }
 }

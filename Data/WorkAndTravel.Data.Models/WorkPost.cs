@@ -10,7 +10,7 @@
         public WorkPost()
         {
             this.Images = new HashSet<Image>();
-            this.Rating = new HashSet<Rating>();
+            this.Ratings = new HashSet<Rating>();
         }
 
         [MaxLength(80)]
@@ -30,7 +30,7 @@
 
         public int? PaymentPerDay { get; set; }
 
-        public virtual ICollection<Rating> Rating { get; set; }
+        public virtual ICollection<Rating> Ratings { get; set; }
 
         public virtual ICollection<Image> Images { get; set; }
 

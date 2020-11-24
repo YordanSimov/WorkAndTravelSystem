@@ -7,7 +7,6 @@
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
-    using Microsoft.AspNetCore.Mvc.ModelBinding;
     using WorkAndTravel.Data.Models;
     using WorkAndTravel.Services.Data;
     using WorkAndTravel.Web.ViewModels;
@@ -88,9 +87,9 @@
             return this.View(viewModel);
         }
 
-        public IActionResult ById(int Id)
+        public IActionResult ById(int id)
         {
-            var workPost = this.workPostsService.GetById<SingleWorkPostViewModel>(Id);
+            var workPost = this.workPostsService.GetById<SingleWorkPostViewModel>(id);
 
             return this.View(workPost);
         }

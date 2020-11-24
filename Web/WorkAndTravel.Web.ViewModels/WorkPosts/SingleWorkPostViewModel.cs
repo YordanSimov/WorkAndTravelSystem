@@ -9,6 +9,8 @@
 
     public class SingleWorkPostViewModel : IMapFrom<WorkPost>, IHaveCustomMappings
     {
+        public int Id { get; set; }
+
         public string Title { get; set; }
 
         public string Description { get; set; }
@@ -17,7 +19,7 @@
 
         public DateTime CreatedOn { get; set; }
 
-        public string AddedByUserUserName { get; set; }
+        public string AddedByUserUsername { get; set; }
 
         public string RemoteImageUrl { get; set; }
 
@@ -35,9 +37,13 @@
 
         public string Requirement { get; set; }
 
+        public double AverageRating { get; set; }
+
         public void CreateMappings(IProfileExpression configuration)
         {
             configuration.CreateMap<WorkPost, SingleWorkPostViewModel>()
+                .ForMember(x => x.AverageRating, opt =>
+                    opt.MapFrom(x => x.Ratings.Count() == 0 ? 0 : x.Ratings.Average(a => a.Value)))
                 .ForMember(x => x.RemoteImageUrl, opt =>
                     opt.MapFrom(x =>
                      x.Images.FirstOrDefault().RemoteImageUrl != null ?

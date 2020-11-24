@@ -53,6 +53,10 @@
                     }).AddRazorRuntimeCompilation();
             services.AddRazorPages();
             services.AddDatabaseDeveloperPageExceptionFilter();
+            services.AddAntiforgery(options =>
+            {
+                options.HeaderName = "X-CSRF-TOKEN";
+            });
 
             services.AddSingleton(this.configuration);
 
@@ -67,6 +71,7 @@
             services.AddTransient<ICountriesService, CountriesService>();
             services.AddTransient<IWorkPostsService, WorkPostsService>();
             services.AddTransient<IGetCountsService, GetCountsService>();
+            services.AddTransient<IRatingsService, RatingsService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

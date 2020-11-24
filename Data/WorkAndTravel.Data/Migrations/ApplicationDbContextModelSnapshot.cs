@@ -390,8 +390,8 @@ namespace WorkAndTravel.Data.Migrations
                     b.Property<DateTime?>("ModifiedOn")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("Stars")
-                        .HasColumnType("int");
+                    b.Property<byte>("Value")
+                        .HasColumnType("tinyint");
 
                     b.Property<int>("WorkPostId")
                         .HasColumnType("int");
@@ -571,11 +571,11 @@ namespace WorkAndTravel.Data.Migrations
             modelBuilder.Entity("WorkAndTravel.Data.Models.Rating", b =>
                 {
                     b.HasOne("WorkAndTravel.Data.Models.ApplicationUser", "AddedByUser")
-                        .WithMany()
+                        .WithMany("Ratings")
                         .HasForeignKey("AddedByUserId");
 
                     b.HasOne("WorkAndTravel.Data.Models.WorkPost", "WorkPost")
-                        .WithMany("Rating")
+                        .WithMany("Ratings")
                         .HasForeignKey("WorkPostId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
@@ -637,6 +637,8 @@ namespace WorkAndTravel.Data.Migrations
 
                     b.Navigation("Logins");
 
+                    b.Navigation("Ratings");
+
                     b.Navigation("Roles");
                 });
 
@@ -663,7 +665,7 @@ namespace WorkAndTravel.Data.Migrations
                 {
                     b.Navigation("Images");
 
-                    b.Navigation("Rating");
+                    b.Navigation("Ratings");
                 });
 #pragma warning restore 612, 618
         }
