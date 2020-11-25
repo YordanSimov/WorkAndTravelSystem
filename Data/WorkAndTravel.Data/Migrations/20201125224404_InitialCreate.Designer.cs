@@ -10,7 +10,7 @@ using WorkAndTravel.Data;
 namespace WorkAndTravel.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20201124201133_InitialCreate")]
+    [Migration("20201125224404_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -328,6 +328,50 @@ namespace WorkAndTravel.Data.Migrations
                     b.ToTable("Cities");
                 });
 
+            modelBuilder.Entity("WorkAndTravel.Data.Models.Comment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("Content")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("ModifiedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("ParentId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("WorkPostId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IsDeleted");
+
+                    b.HasIndex("ParentId");
+
+                    b.HasIndex("UserId");
+
+                    b.HasIndex("WorkPostId");
+
+                    b.ToTable("Comments");
+                });
+
             modelBuilder.Entity("WorkAndTravel.Data.Models.Country", b =>
                 {
                     b.Property<int>("Id")
@@ -425,10 +469,6 @@ namespace WorkAndTravel.Data.Migrations
 
                     b.Property<int>("CityId")
                         .HasColumnType("int");
-
-                    b.Property<string>("Comment")
-                        .HasMaxLength(300)
-                        .HasColumnType("nvarchar(300)");
 
                     b.Property<int>("CountryId")
                         .HasColumnType("int");
@@ -556,6 +596,29 @@ namespace WorkAndTravel.Data.Migrations
                     b.Navigation("Country");
                 });
 
+            modelBuilder.Entity("WorkAndTravel.Data.Models.Comment", b =>
+                {
+                    b.HasOne("WorkAndTravel.Data.Models.Comment", "Parent")
+                        .WithMany()
+                        .HasForeignKey("ParentId");
+
+                    b.HasOne("WorkAndTravel.Data.Models.ApplicationUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
+
+                    b.HasOne("WorkAndTravel.Data.Models.WorkPost", "WorkPost")
+                        .WithMany("Comments")
+                        .HasForeignKey("WorkPostId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Parent");
+
+                    b.Navigation("User");
+
+                    b.Navigation("WorkPost");
+                });
+
             modelBuilder.Entity("WorkAndTravel.Data.Models.Image", b =>
                 {
                     b.HasOne("WorkAndTravel.Data.Models.ApplicationUser", "AddedByUser")
@@ -668,6 +731,8 @@ namespace WorkAndTravel.Data.Migrations
 
             modelBuilder.Entity("WorkAndTravel.Data.Models.WorkPost", b =>
                 {
+                    b.Navigation("Comments");
+
                     b.Navigation("Images");
 
                     b.Navigation("Ratings");

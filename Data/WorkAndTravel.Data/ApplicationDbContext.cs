@@ -6,11 +6,10 @@
     using System.Threading;
     using System.Threading.Tasks;
 
-    using WorkAndTravel.Data.Common.Models;
-    using WorkAndTravel.Data.Models;
-
     using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore;
+    using WorkAndTravel.Data.Common.Models;
+    using WorkAndTravel.Data.Models;
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser, ApplicationRole, string>
     {
@@ -24,6 +23,7 @@
         {
         }
 
+        public DbSet<Comment> Comments { get; set; }
 
         public DbSet<Country> Countries { get; set; }
 

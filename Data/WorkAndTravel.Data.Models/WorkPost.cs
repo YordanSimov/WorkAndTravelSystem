@@ -11,6 +11,7 @@
         {
             this.Images = new HashSet<Image>();
             this.Ratings = new HashSet<Rating>();
+            this.Comments = new HashSet<Comment>();
         }
 
         [MaxLength(80)]
@@ -23,8 +24,7 @@
 
         public virtual ApplicationUser AddedByUser { get; set; }
 
-        [MaxLength(300)]
-        public string Comment { get; set; }
+        public virtual ICollection<Comment> Comments { get; set; }
 
         public string Responsibility { get; set; }
 

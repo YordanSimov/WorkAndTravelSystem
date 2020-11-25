@@ -1,11 +1,13 @@
 ﻿namespace WorkAndTravel.Web.ViewModels.WorkPosts
 {
     using System;
+    using System.Collections.Generic;
     using System.Linq;
 
     using AutoMapper;
     using WorkAndTravel.Data.Models;
     using WorkAndTravel.Services.Mapping;
+    using WorkAndTravel.Web.ViewModels.Comment;
 
     public class SingleWorkPostViewModel : IMapFrom<WorkPost>, IHaveCustomMappings
     {
@@ -38,6 +40,8 @@
         public string Requirement { get; set; }
 
         public double AverageRating { get; set; }
+
+        public IEnumerable<PostCommentViewModel> Comments { get; set; }
 
         public string Providing { get; set; }
 
