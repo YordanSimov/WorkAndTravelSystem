@@ -18,6 +18,8 @@
     using WorkAndTravel.Data.Seeding;
     using WorkAndTravel.Services.Messaging;
 
+    using static WorkAndTravel.Common.GlobalConstants;
+
     public static class Program
     {
         public static int Main(string[] args)
@@ -75,7 +77,7 @@
             services.AddScoped<IDbQueryRunner, DbQueryRunner>();
 
             // Application services
-            services.AddTransient<IEmailSender, NullMessageSender>();
+            services.AddTransient<IEmailSender>(x => new SendGridEmailSender(SendGridKey));
         }
     }
 }

@@ -21,6 +21,8 @@
     using WorkAndTravel.Services.Messaging;
     using WorkAndTravel.Web.ViewModels;
 
+    using static WorkAndTravel.Common.GlobalConstants;
+
     public class Startup
     {
         private readonly IConfiguration configuration;
@@ -66,7 +68,7 @@
             services.AddScoped<IDbQueryRunner, DbQueryRunner>();
 
             // Application services
-            services.AddTransient<IEmailSender, NullMessageSender>();
+            services.AddTransient<IEmailSender>(x => new SendGridEmailSender(SendGridKey));
             services.AddTransient<ICategoriesService, CategoriesService>();
             services.AddTransient<ICountriesService, CountriesService>();
             services.AddTransient<IWorkPostsService, WorkPostsService>();
