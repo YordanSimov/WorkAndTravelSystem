@@ -18,7 +18,7 @@
             this.emailSender = emailSender;
         }
 
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
             var viewModel = new ContactUsInputModel();
             return this.View(viewModel);
@@ -36,7 +36,8 @@
 
                 await this.emailSender.SendEmailAsync(email, name, AdminEmail, subject, content, null);
 
-                return this.RedirectToAction(nameof(HomeController.Index), "Home");
+                this.TempData["Message"] = "Email sent successfully.";
+                return this.Redirect("/");
             }
 
             return this.View(model);
