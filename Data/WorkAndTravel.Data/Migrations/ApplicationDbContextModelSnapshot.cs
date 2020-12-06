@@ -207,6 +207,9 @@ namespace WorkAndTravel.Data.Migrations
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
 
+                    b.Property<DateTime>("BirthDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
@@ -224,8 +227,16 @@ namespace WorkAndTravel.Data.Migrations
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
 
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
@@ -252,6 +263,9 @@ namespace WorkAndTravel.Data.Migrations
 
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("bit");
+
+                    b.Property<int>("ProfilePictureId")
+                        .HasColumnType("int");
 
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
@@ -416,6 +430,42 @@ namespace WorkAndTravel.Data.Migrations
                     b.HasIndex("WorkPostId");
 
                     b.ToTable("Images");
+                });
+
+            modelBuilder.Entity("WorkAndTravel.Data.Models.ProfilePicture", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("ModifiedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Url")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IsDeleted");
+
+                    b.HasIndex("UserId")
+                        .IsUnique()
+                        .HasFilter("[UserId] IS NOT NULL");
+
+                    b.ToTable("ProfilePictures");
                 });
 
             modelBuilder.Entity("WorkAndTravel.Data.Models.Rating", b =>
@@ -634,6 +684,15 @@ namespace WorkAndTravel.Data.Migrations
                     b.Navigation("WorkPost");
                 });
 
+            modelBuilder.Entity("WorkAndTravel.Data.Models.ProfilePicture", b =>
+                {
+                    b.HasOne("WorkAndTravel.Data.Models.ApplicationUser", "User")
+                        .WithOne("ProfilePicture")
+                        .HasForeignKey("WorkAndTravel.Data.Models.ProfilePicture", "UserId");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("WorkAndTravel.Data.Models.Rating", b =>
                 {
                     b.HasOne("WorkAndTravel.Data.Models.ApplicationUser", "AddedByUser")
@@ -702,6 +761,8 @@ namespace WorkAndTravel.Data.Migrations
                     b.Navigation("Claims");
 
                     b.Navigation("Logins");
+
+                    b.Navigation("ProfilePicture");
 
                     b.Navigation("Ratings");
 

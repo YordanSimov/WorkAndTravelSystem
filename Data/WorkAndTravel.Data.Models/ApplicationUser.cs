@@ -3,10 +3,11 @@ namespace WorkAndTravel.Data.Models
 {
     using System;
     using System.Collections.Generic;
-
-    using WorkAndTravel.Data.Common.Models;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
 
     using Microsoft.AspNetCore.Identity;
+    using WorkAndTravel.Data.Common.Models;
 
     public class ApplicationUser : IdentityUser, IAuditInfo, IDeletableEntity
     {
@@ -18,6 +19,21 @@ namespace WorkAndTravel.Data.Models
             this.Logins = new HashSet<IdentityUserLogin<string>>();
             this.Ratings = new HashSet<Rating>();
         }
+
+        [Required]
+        public string FirstName { get; set; }
+
+        [Required]
+        public string LastName { get; set; }
+
+        [Required]
+        public DateTime BirthDate { get; set; }
+
+        [Required]
+
+        public int ProfilePictureId { get; set; }
+
+        public virtual ProfilePicture ProfilePicture { get; set; }
 
         // Audit info
         public DateTime CreatedOn { get; set; }

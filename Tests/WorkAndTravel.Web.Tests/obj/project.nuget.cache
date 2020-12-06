@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "lVlgWvXNnCiJwhnQmqbAG9ZcOx8KYure22fH6tTQgrQkNZ+QzXdM3rUHMf2H0CxpxnFbaqC/CrM1J7Xfif/TTw==",
+  "dgSpecHash": "+4Qn9bq8ufwsiNV4cwdP6eTGTCt5uAxCTlboIiBXS1/eK0BPxehQhqtAlharEc2fwu8k+i8kpFEi2IHWbV08Ag==",
   "success": true,
   "projectFilePath": "C:\\Users\\Simov\\Desktop\\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\\Tests\\WorkAndTravel.Web.Tests\\WorkAndTravel.Web.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Simov\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\Simov\\.nuget\\packages\\buildbundlerminifier\\3.2.449\\buildbundlerminifier.3.2.449.nupkg.sha512",
+    "C:\\Users\\Simov\\.nuget\\packages\\cloudinary.core\\1.31.0\\cloudinary.core.1.31.0.nupkg.sha512",
     "C:\\Users\\Simov\\.nuget\\packages\\humanizer.core\\2.2.0\\humanizer.core.2.2.0.nupkg.sha512",
     "C:\\Users\\Simov\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.0\\microsoft.aspnetcore.cryptography.internal.5.0.0.nupkg.sha512",
     "C:\\Users\\Simov\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\5.0.0\\microsoft.aspnetcore.cryptography.keyderivation.5.0.0.nupkg.sha512",

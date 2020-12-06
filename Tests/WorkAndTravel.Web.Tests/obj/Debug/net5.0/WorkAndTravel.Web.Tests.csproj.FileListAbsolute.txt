@@ -535,3 +535,4 @@ C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Te
 C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Tests\WorkAndTravel.Web.Tests\obj\Debug\net5.0\ref\WorkAndTravel.Web.Tests.dll
 C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Tests\WorkAndTravel.Web.Tests\obj\Debug\net5.0\WorkAndTravel.Web.Tests.pdb
 C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Tests\WorkAndTravel.Web.Tests\obj\Debug\net5.0\WorkAndTravel.Web.Tests.genruntimeconfig.cache
+C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Tests\WorkAndTravel.Web.Tests\bin\Debug\net5.0\Cloudinary.Core.dll

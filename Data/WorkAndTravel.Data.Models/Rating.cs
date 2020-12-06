@@ -1,6 +1,5 @@
 ﻿namespace WorkAndTravel.Data.Models
 {
-
     using WorkAndTravel.Data.Common.Models;
 
     public class Rating : BaseModel<int>

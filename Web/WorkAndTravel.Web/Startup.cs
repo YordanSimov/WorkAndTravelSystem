@@ -2,6 +2,7 @@
 {
     using System.Reflection;
 
+    using CloudinaryDotNet;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Http;
@@ -61,6 +62,15 @@
             });
 
             services.AddSingleton(this.configuration);
+
+            Account account = new Account(
+                       this.configuration["Cloudinary:ApiName"],
+                       this.configuration["Cloudinary:ApiKey"],
+                       this.configuration["Cloudinary:ApiSecret"]);
+
+            var cloudinary = new CloudinaryDotNet.Cloudinary(account);
+
+            services.AddSingleton(cloudinary);
 
             // Data repositories
             services.AddScoped(typeof(IDeletableEntityRepository<>), typeof(EfDeletableEntityRepository<>));
