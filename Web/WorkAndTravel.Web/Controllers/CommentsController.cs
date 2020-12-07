@@ -36,7 +36,7 @@
                 }
             }
 
-       // TODO: da se proveri za id - to ot html da ne se smeni
+        //TODO: da se proveri za id - to ot html da ne se smeni
             var userId = this.userManager.GetUserId(this.User);
             await this.commentsService.Create(input.WorkPostId, userId, input.Content, parentId);
 

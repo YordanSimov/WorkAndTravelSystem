@@ -1,0 +1,33 @@
+﻿@model WorkAndTravel.Web.ViewModels.Account.ProfileViewModel
+
+@{
+    this.ViewData["Title"] = "My posts";
+}
+
+@if (this.User.Identity.IsAuthenticated)
+{
+    <a class="btn btn-primary float-right" asp-area="Identity" asp-page="/Account/Manage/Index">Profile Settings</a>
+    <h1>This is the page where you can see your posts!</h1>
+    if (Model.WorkPosts.Any())
+    {
+<div class="row">
+    @foreach (var post in this.Model.WorkPosts)
+    {
+        <div class="card-deck card-columns media col-md-3">
+            <div class="card">
+                <img src="@post.RemoteImageUrl" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title"><a asp-controller="WorkPost" asp-action="ById" asp-route-id="@post.Id">@post.Title</a></h5>
+                    <p class="card-text ">@post.Description.Substring(0, 35) ...</p>
+                    <p class="card-text"><small class="text-muted">@post.CategoryName</small></p>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+    }
+    else
+    {
+        <div>You have not created a post yet.</div>
+    }
+}

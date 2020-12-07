@@ -1,6 +1,7 @@
 ﻿namespace WorkAndTravel.Web.ViewModels.Account
 {
     using System;
+    using System.Collections.Generic;
 
     using WorkAndTravel.Data.Models;
     using WorkAndTravel.Services.Mapping;
@@ -13,8 +14,6 @@
 
         public string LastName { get; set; }
 
-        public string FullName => $"{this.FirstName} {this.LastName}";
-
         public string Email { get; set; }
 
         public string ProfilePictureUrl { get; set; }
@@ -22,5 +21,7 @@
         public DateTime BirthDate { get; set; }
 
         public int Age => DateTime.UtcNow.Year - this.BirthDate.Year;
+
+        public IEnumerable<ProfilePostViewModel> WorkPosts { get; set; }
     }
 }
