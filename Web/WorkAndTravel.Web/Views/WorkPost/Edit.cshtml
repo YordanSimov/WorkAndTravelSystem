@@ -1,0 +1,69 @@
+﻿@model WorkAndTravel.Web.ViewModels.WorkPosts.EditWorkPostInputModel
+@{
+    this.ViewData["Title"] = "Edit workpost";
+    var categoryItems = this.Model.CategoryItems.Select(x => new SelectListItem(x.Value, x.Key));
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<form method="post" id="editForm">
+    <div class="form-group">
+        <label asp-for="Title"></label>
+        <input asp-for="Title" class="form-control" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Description"></label>
+        <textarea asp-for="Description" class="form-control" rows="7">></textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="CategoryId"></label>
+        <select asp-for="CategoryId" class="form-control" asp-items="categoryItems"></select>
+        <span asp-validation-for="CategoryId" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Responsibility"></label>
+        <textarea asp-for="Responsibility" class="form-control" rows="5">></textarea>
+        <span asp-validation-for="Responsibility" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="PaymentPerDay"></label>
+        <input asp-for="PaymentPerDay" class="form-control" />
+        <span asp-validation-for="PaymentPerDay" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Requirement"></label>
+        <textarea asp-for="Requirement" class="form-control" rows="5">></textarea>
+        <span asp-validation-for="Requirement" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Providing"></label>
+        <textarea asp-for="Providing" class="form-control" rows="5">></textarea>
+        <span asp-validation-for="Providing" class="text-danger"></span>
+    </div>
+    <hr />
+    <input type="hidden" asp-for="Id" />
+</form>
+<button class="btn btn-primary"  data-toggle="modal" data-target="#editModal">Save changes</button>
+
+<!-- Modal -->
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Confirm changes.</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Do you want to edit "@Model.Title" ?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                <button type="button" class="btn btn-primary" onclick="editForm.submit()">Save Changes</button>
+            </div>
+        </div>
+    </div>
+</div>

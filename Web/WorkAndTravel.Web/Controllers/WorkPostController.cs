@@ -35,6 +35,31 @@
         }
 
         [Authorize]
+        public IActionResult Edit(int id)
+        {
+            var inputModel = this.workPostsService.GetById<EditWorkPostInputModel>(id);
+
+            inputModel.CategoryItems = this.categoriesService.GetAllAsKeyValuePairs();
+
+            return this.View(inputModel);
+        }
+
+        [HttpPost]
+        [Authorize]
+        public async Task<IActionResult> Edit(int id, EditWorkPostInputModel input)
+        {
+            if (!this.ModelState.IsValid)
+            {
+                input.CategoryItems = this.categoriesService.GetAllAsKeyValuePairs();
+                return this.View(input);
+            }
+
+            await this.workPostsService.EditAsync(id, input);
+
+            return this.RedirectToAction(nameof(this.ById), new { id = id });
+        }
+
+        [Authorize]
         public IActionResult Create()
         {
             var viewModel = new CreateWorkPostsInputModel();
@@ -92,6 +117,14 @@
             var workPost = this.workPostsService.GetById<SingleWorkPostViewModel>(id);
 
             return this.View(workPost);
+        }
+
+        [HttpPost]
+        [Authorize]
+        public async Task<IActionResult> Delete(int id)
+        {
+            await this.workPostsService.DeleteAsync(id);
+            return this.RedirectToAction(nameof(this.All));
         }
     }
 }

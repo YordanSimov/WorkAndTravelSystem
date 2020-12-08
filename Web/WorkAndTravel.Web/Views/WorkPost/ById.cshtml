@@ -44,123 +44,140 @@
                 </div>
             </div>
         }
-    } 
+    }
 }
-    <section class="site-section">
-        <div class="container">
-            <h1 class="text-primary">@this.ViewData["Title"]</h1>
-            <div class=" row mb-4">
-                <div class="col-xl-9 col-12">
-                    <ul class="entry-meta">
-                        <li class="ml-0 mr-2 mb-2"><i class="fas fa-user"></i> @Model.AddedByUserUsername</li>
-                        <li class="ml-0 mr-2 mb-2"><i class="fas fa-briefcase"></i> @Model.CategoryName</li>
-                        <li class="m-2"><i class="fas fa-globe"></i> @Model.CountryName, @Model.CityName</li>
-                        <li class="single-meta">
-                            <ul class="item-rating">
-                                <li data-rating="1" id="q6-1"><i class="fas fa-star"></i></li>
-                                <li data-rating="2" id="q6-2"><i class="fas fa-star"></i></li>
-                                <li data-rating="3" id="q6-3"><i class="fas fa-star"></i></li>
-                                <li data-rating="4" id="q6-4"><i class="fas fa-star"></i></li>
-                                <li data-rating="5" id="q6-5"><i class="fas fa-star"></i></li>
-                                <li><span id="averageRatingValue">@Model.AverageRating.ToString("0.0")</span><span> / 5</span></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
+<section class="site-section">
+    <div>
+        <h1 class="text-primary">@this.ViewData["Title"]</h1>
+        @if (this.User.Identity.IsAuthenticated)
+        {
+            @if (this.User.Identity.Name == Model.AddedByUserUsername)
+            {
+                <ul class="entry-meta">
+                    <li class="single-meta float-md-right">
+                        <form asp-action="Delete" id="deleteForm" asp-route-id="@Model.Id">
+                        </form>
+                        <button class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Delete</button>
+                    </li>
+                    <li class="single-meta float-md-right">
+                        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Edit</a>
+                    </li>
+                </ul>
+            }
+        }
+        <div class="row mb-auto">
+            <div class="col-xl-auto col-auto">
+                <ul class="entry-meta">
+                    <li class="ml-0 mr-2 mb-auto"><i class="fas fa-user"></i> @Model.AddedByUserUsername</li>
+                    <li class="ml-0 mr-2 mb-auto"><i class="fas fa-briefcase"></i> @Model.CategoryName</li>
+                    <li class="m-auto"><i class="fas fa-globe"></i> @Model.CountryName, @Model.CityName</li>
+                    <li class="single-meta ml-2">
+                        <ul class="item-rating">
+                            <li class="mr-0" data-rating="1" id="q6-1"><i class="fas fa-star"></i></li>
+                            <li class="mr-0" data-rating="2" id="q6-2"><i class="fas fa-star"></i></li>
+                            <li class="mr-0" data-rating="3" id="q6-3"><i class="fas fa-star"></i></li>
+                            <li class="mr-0" data-rating="4" id="q6-4"><i class="fas fa-star"></i></li>
+                            <li class="mr-0" data-rating="5" id="q6-5"><i class="fas fa-star"></i></li>
+                            <li><span id="averageRatingValue">@Model.AverageRating.ToString("0.0")</span><span> / 5</span></li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
         </div>
-        <img class="img-fluid w-50 border mb-3 mt-2" src="@Model.RemoteImageUrl" alt="@Model.Title" />
-        <div class="item-feature">
-            <div class="col-lg-8">
-                <div class="mb-5">
-                    <h2 class="h4 d-flex align-items-center mb-4 text-primary">
-                        <span class="icon-align-left mr-3">Job Description</span>
-                    </h2>
-                    <p>
-                        @Model.Description
-                    </p>
-                </div>
-                <div class="mb-5">
-                    <h3 class="h5 d-flex align-items-center mb-4 text-primary"><span class="icon-rocket mr-3">Information about your responsibilities</span></h3>
-                    <ul class="list-unstyled m-0 p-0">
-                        <li class="d-flex align-items-start mb-2">
-                            <span class="icon-check_circle mr-2 text-muted"></span><span>
-                                @Model.Responsibility
-                            </span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="mb-5">
-                    <h3 class="h5 d-flex align-items-center mb-4 text-primary">
-                        <span class="icon-book mr-3">Requirements</span>
-                    </h3>
-                    <ul class="list-unstyled m-0 p-0">
-                        <li class="d-flex align-items-start mb-2">
-                            <span class="icon-check_circle mr-2 text-muted"></span><span>
-                                @Model.Requirement
-                            </span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="mb-5">
-                    <h3 class="h5 d-flex align-items-center mb-4 text-primary">
-                        <span class="icon-book mr-3">You will get:</span>
-                    </h3>
-                    <ul class="list-unstyled m-0 p-0">
-                        <li class="d-flex align-items-start mb-2">
-                            <span class="icon-check_circle mr-2 text-muted"></span><span>
-                                @Model.Providing
-                            </span>
-                        </li>
-                    </ul>
-                </div>
+    </div>
+    <img class="img-fluid w-50 border mb-3 mt-2" src="@Model.RemoteImageUrl" alt="@Model.Title" />
+    <div class="item-feature">
+        <div class="col-lg-auto">
+            <div class="mb-auto">
+                <h2 class="h4 d-flex align-items-center mb-4 text-primary">
+                    <span class="icon-align-left mr-3">Job Description</span>
+                </h2>
+                <p>
+                    @Model.Description
+                </p>
             </div>
-            <div class="col-md-5">
-                <div class="bg-light p-3 border rounded mb-4">
-                    <h3 class="text-primary  mt-3 h5 pl-3 mb-3 ">Post Summary</h3>
-                    <ul class="list-unstyled pl-3 mb-0">
-                        <li class="mb-2">
-                        <i class="fas fa-calendar-alt"></i><strong class="text-black"> Published on:</strong><time datetime="@Model.CreatedOn.ToString("O")"></time></li>
-                        <li class="star-fill mb-2"><i class="fas fa-star"></i><strong class="text-black"> Our rating: @Model.AverageRating.ToString("0.0")</strong></li>
-                        <li class="mb-2"><i class="fas fa-location-arrow"></i><strong class="text-black"> Job Location:</strong>  @Model.AddressName</li>
-                        <li class="mb-2"><i class="fas fa-wallet"></i><strong class="text-black"> Salary: </strong> @Model.PaymentPerDay $</li>
-                        <li class="mb-2"><i class="fas fa-envelope"></i><strong class="text-black"> Contact us: </strong> @Model.AddedByUserUsername </li>
-                    </ul>
-                    <div>
-                        <div class="row">
-                            <div class="col-6">
-                                <a href="#" class="btn btn-block btn-primary btn-md mt-3 ml-5">Apply Now</a>
-                            </div>
+            <div class="mb-5">
+                <h3 class="h5 d-flex align-items-center mb-4 text-primary"><span class="icon-rocket mr-3">Information about your responsibilities</span></h3>
+                <ul class="list-unstyled m-0 p-0">
+                    <li class="d-flex align-items-start mb-2">
+                        <span class="icon-check_circle mr-2 text-muted"></span><span>
+                            @Model.Responsibility
+                        </span>
+                    </li>
+                </ul>
+            </div>
+            <div class="mb-5">
+                <h3 class="h5 d-flex align-items-center mb-4 text-primary">
+                    <span class="icon-book mr-3">Requirements</span>
+                </h3>
+                <ul class="list-unstyled m-0 p-0">
+                    <li class="d-flex align-items-start mb-2">
+                        <span class="icon-check_circle mr-2 text-muted"></span><span>
+                            @Model.Requirement
+                        </span>
+                    </li>
+                </ul>
+            </div>
+            <div class="mb-5">
+                <h3 class="h5 d-flex align-items-center mb-4 text-primary">
+                    <span class="icon-book mr-3">You will get:</span>
+                </h3>
+                <ul class="list-unstyled m-0 p-0">
+                    <li class="d-flex align-items-start mb-2">
+                        <span class="icon-check_circle mr-2 text-muted"></span><span>
+                            @Model.Providing
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <div class="bg-light p-3 border rounded mb-4">
+                <h3 class="text-primary  mt-3 h5 pl-3 mb-3 ">Post Summary</h3>
+                <ul class="list-unstyled pl-3 mb-0">
+                    <li class="mb-2">
+                        <i class="fas fa-calendar-alt"></i><strong class="text-black"> Published on: </strong><time datetime="@Model.CreatedOn.ToString("O")"></time>
+                    </li>
+                    <li class="star-fill mb-2"><i class="fas fa-star"></i><strong class="text-black"> Our rating: @Model.AverageRating.ToString("0.0")</strong></li>
+                    <li class="mb-2"><i class="fas fa-location-arrow"></i><strong class="text-black"> Job Location:</strong>  @Model.AddressName</li>
+                    <li class="mb-2"><i class="fas fa-wallet"></i><strong class="text-black"> Salary: </strong> @Model.PaymentPerDay $</li>
+                    <li class="mb-2"><i class="fas fa-envelope"></i><strong class="text-black"> Contact us: </strong> @Model.AddedByUserUsername </li>
+                </ul>
+                <div>
+                    <div class="row">
+                        <div class="col-6">
+                            <a href="#" class="btn btn-block btn-primary btn-md mt-3 ml-5">Apply Now</a>
                         </div>
                     </div>
                 </div>
             </div>
-                @if (this.User.Identity.IsAuthenticated)
-                {
-                    <div class="px-4 pt-3"> <button type="button" class="btn btn-primary float-right mb-3" onclick="showAddCommentForm(0)"><i class="fa fa-plus"></i>&nbsp; Comment</button> </div>
-                    <div class="clearfix"></div>
-                }
-                @{ DisplayComments(null); }
         </div>
-    </section>
-
-    <div>
-        <form asp-controller="Comments" asp-action="Create" method="post" id="AddCommentForm" style="display: none">
-            <input type="hidden" name="WorkPostId" value="@Model.Id" />
-            <input type="hidden" name="ParentId" value="0" />
-            <div>
-                <label for="Content"></label>
-                <textarea name="Content" id="Content" class="mb-3 form-control" rows="4"></textarea>
-            </div>
-            <div>
-                <input type="submit" class="btn btn-primary" value="Add comment" />
-            </div>
-        </form>
+        @if (this.User.Identity.IsAuthenticated)
+        {
+            <div class="px-4 pt-3"> <button type="button" class="btn btn-primary float-right mb-3" onclick="showAddCommentForm(0)"><i class="fa fa-plus"></i>&nbsp; Comment</button> </div>
+            <div class="clearfix"></div>
+        }
+        @{ DisplayComments(null); }
     </div>
+</section>
 
-    <form method="post" id="antiForgeryForm"></form>
-    @section Scripts {
-        <script>
+<div>
+    <form asp-controller="Comments" asp-action="Create" method="post" id="AddCommentForm" style="display: none">
+        <input type="hidden" name="WorkPostId" value="@Model.Id" />
+        <input type="hidden" name="ParentId" value="0" />
+        <div>
+            <label for="Content"></label>
+            <textarea name="Content" id="Content" class="mb-3 form-control" rows="4"></textarea>
+        </div>
+        <div>
+            <input type="submit" class="btn btn-primary" value="Add comment" />
+        </div>
+    </form>
+</div>
+
+<form method="post" id="antiForgeryForm"></form>
+@section Scripts {
+    <script>
         $("li[data-rating]").each(function (el) {
             $(this).click(function () {
                 var value = $(this).attr("data-rating");
@@ -181,36 +198,56 @@
                 });
             })
         });
-        </script>
-        <!--Stars colouring-->
-        @if (this.User.Identity.IsAuthenticated)
-        {
-            <script>
-                $("li[data-rating]").click(function () {
-                    var rating = $(this).attr('id');
-                    var res = rating.split("-");
-                    rating = res[1];
-                    for (var i = 0; i < 5; i++) {
-                        if (i <= rating) {
-                            $('#q6-' + i).addClass("star-fill");
-                        }
-                    }
-                });
-                $("li[data-rating]").hover(function () {
-                    $(this).addClass("star-fill").prevUntil("star-fill").addClass("star-fill");
-                }, function () {
-                    $(this).nextUntil("star-fill").removeClass("star-fill");
-                });
-            </script>
-        }
-        <!--Comments-->
+    </script>
+    <!--Stars colouring-->
+    @if (this.User.Identity.IsAuthenticated)
+    {
         <script>
-            function showAddCommentForm(parentId) {
-                $("#AddCommentForm input[name='ParentId']").val(parentId);
-                $("#AddCommentForm").show();
-                $([document.documentElement, document.body]).animate({
-                    scrollTop: $("#AddCommentForm").offset().top
-                }, 1000);
-            }
+            $("li[data-rating]").click(function () {
+                var rating = $(this).attr('id');
+                var res = rating.split("-");
+                rating = res[1];
+                for (var i = 0; i < 5; i++) {
+                    if (i <= rating) {
+                        $('#q6-' + i).addClass("star-fill");
+                    }
+                }
+            });
+            $("li[data-rating]").hover(function () {
+                $(this).addClass("star-fill").prevUntil("star-fill").addClass("star-fill");
+            }, function () {
+                $(this).nextUntil("star-fill").removeClass("star-fill");
+            });
         </script>
     }
+    <!--Comments-->
+    <script>
+        function showAddCommentForm(parentId) {
+            $("#AddCommentForm input[name='ParentId']").val(parentId);
+            $("#AddCommentForm").show();
+            $([document.documentElement, document.body]).animate({
+                scrollTop: $("#AddCommentForm").offset().top
+            }, 1000);
+        }
+    </script>
+}
+<!-- Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Delete Post</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Do you want to delete "@Model.Title" ?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" onclick="deleteForm.submit()">Yes</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+            </div>
+        </div>
+    </div>
+</div>

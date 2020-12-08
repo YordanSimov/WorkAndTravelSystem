@@ -10,6 +10,7 @@
     using WorkAndTravel.Data.Models;
     using WorkAndTravel.Services.Mapping;
     using WorkAndTravel.Web.ViewModels;
+    using WorkAndTravel.Web.ViewModels.WorkPosts;
 
     public class WorkPostsService : IWorkPostsService
     {
@@ -85,6 +86,30 @@
             await this.workPostRepository.SaveChangesAsync();
         }
 
+        public async Task DeleteAsync(int id)
+        {
+            var workPost = this.workPostRepository.All().FirstOrDefault(x => x.Id == id);
+
+            this.workPostRepository.Delete(workPost);
+
+            await this.workPostRepository.SaveChangesAsync();
+        }
+
+        public async Task EditAsync(int id, EditWorkPostInputModel input)
+        {
+            var workPost = this.workPostRepository.All().FirstOrDefault(x => x.Id == id);
+
+            workPost.Title = input.Title;
+            workPost.Requirement = input.Requirement;
+            workPost.Providing = input.Providing;
+            workPost.CategoryId = input.CategoryId;
+            workPost.PaymentPerDay = input.PaymentPerDay;
+            workPost.Description = input.Description;
+            workPost.Responsibility = input.Responsibility;
+
+            await this.workPostRepository.SaveChangesAsync();
+        }
+
         public IEnumerable<T> GetAll<T>(int page, int postsPerPage = 12)
         {
             var posts = this.workPostRepository.AllAsNoTracking().OrderByDescending(x => x.Id)
@@ -96,7 +121,7 @@
 
         public T GetById<T>(int id)
         {
-           return this.workPostRepository.AllAsNoTracking().Where(x => x.Id == id).To<T>().FirstOrDefault();
+            return this.workPostRepository.AllAsNoTracking().Where(x => x.Id == id).To<T>().FirstOrDefault();
         }
 
         public int GetCount()

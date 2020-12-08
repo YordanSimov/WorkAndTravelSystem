@@ -15,5 +15,9 @@
         int GetCount();
 
         T GetById<T>(int id);
+
+        Task EditAsync(int id, EditWorkPostInputModel input);
+
+        Task DeleteAsync(int id);
     }
 }
