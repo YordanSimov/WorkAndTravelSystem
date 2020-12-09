@@ -19,5 +19,11 @@
         Task EditAsync(int id, EditWorkPostInputModel input);
 
         Task DeleteAsync(int id);
+
+        IEnumerable<T> SortByDate<T>(int page, int postsPerPage = 12);
+
+        IEnumerable<T> SortByName<T>(int page, int postsPerPage = 12);
+
+        IEnumerable<T> SortBySalary<T>(int page, int postsPerPage = 12);
     }
 }

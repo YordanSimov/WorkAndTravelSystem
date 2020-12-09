@@ -112,6 +112,60 @@
             return this.View(viewModel);
         }
 
+        public IActionResult SortByDate(int id = 1)
+        {
+            if (id <= 0)
+            {
+                return this.NotFound();
+            }
+
+            const int ItemsPerPage = 12;
+            var viewModel = new WorkPostsListViewModel
+            {
+                ItemsPerPage = ItemsPerPage,
+                PageNumber = id,
+                WorkPostsCount = this.workPostsService.GetCount(),
+                WorkPosts = this.workPostsService.SortByDate<WorkPostInListViewModel>(id, 12),
+            };
+            return this.View("All", viewModel);
+        }
+
+        public IActionResult SortByName(int id = 1)
+        {
+            if (id <= 0)
+            {
+                return this.NotFound();
+            }
+
+            const int ItemsPerPage = 12;
+            var viewModel = new WorkPostsListViewModel
+            {
+                ItemsPerPage = ItemsPerPage,
+                PageNumber = id,
+                WorkPostsCount = this.workPostsService.GetCount(),
+                WorkPosts = this.workPostsService.SortByName<WorkPostInListViewModel>(id, 12),
+            };
+            return this.View("All", viewModel);
+        }
+
+        public IActionResult SortBySalary(int id = 1)
+        {
+            if (id <= 0)
+            {
+                return this.NotFound();
+            }
+
+            const int ItemsPerPage = 12;
+            var viewModel = new WorkPostsListViewModel
+            {
+                ItemsPerPage = ItemsPerPage,
+                PageNumber = id,
+                WorkPostsCount = this.workPostsService.GetCount(),
+                WorkPosts = this.workPostsService.SortBySalary<WorkPostInListViewModel>(id, 12),
+            };
+            return this.View("All", viewModel);
+        }
+
         public IActionResult ById(int id)
         {
             var workPost = this.workPostsService.GetById<SingleWorkPostViewModel>(id);

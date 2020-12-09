@@ -138,6 +138,27 @@
             return posts;
         }
 
+        public IEnumerable<T> SortByDate<T>(int page, int postsPerPage = 12)
+        {
+            return this.workPostRepository.AllAsNoTracking().OrderByDescending(x => x.CreatedOn)
+                .Skip((page - 1) * postsPerPage).Take(postsPerPage)
+                .To<T>().ToList();
+        }
+
+        public IEnumerable<T> SortByName<T>(int page, int postsPerPage = 12)
+        {
+            return this.workPostRepository.AllAsNoTracking().OrderBy(x => x.Title)
+                .Skip((page - 1) * postsPerPage).Take(postsPerPage)
+                .To<T>().ToList();
+        }
+
+        public IEnumerable<T> SortBySalary<T>(int page, int postsPerPage = 12)
+        {
+            return this.workPostRepository.AllAsNoTracking().OrderByDescending(x => x.PaymentPerDay)
+                .Skip((page - 1) * postsPerPage).Take(postsPerPage)
+                .To<T>().ToList();
+        }
+
         public T GetById<T>(int id)
         {
             return this.workPostRepository.AllAsNoTracking().Where(x => x.Id == id).To<T>().FirstOrDefault();
