@@ -2278,6 +2278,7 @@
       },
       "WorkAndTravel.Services.Data/1.0.0": {
         "dependencies": {
+          "Cloudinary.Core": "1.31.0",
           "Microsoft.AspNetCore.Http.Features": "5.0.0",
           "WorkAndTravel.Data.Common": "1.0.0",
           "WorkAndTravel.Data.Models": "1.0.0",

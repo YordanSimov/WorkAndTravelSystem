@@ -6,11 +6,13 @@
     using System.Linq;
     using System.Threading.Tasks;
 
+    using CloudinaryDotNet;
     using WorkAndTravel.Data.Common.Repositories;
     using WorkAndTravel.Data.Models;
     using WorkAndTravel.Services.Mapping;
     using WorkAndTravel.Web.ViewModels;
     using WorkAndTravel.Web.ViewModels.WorkPosts;
+    using WorkAndTravel.Web.Cloudinary;
 
     public class WorkPostsService : IWorkPostsService
     {
@@ -18,15 +20,18 @@
         private readonly IDeletableEntityRepository<WorkPost> workPostRepository;
         private readonly IRepository<Address> addressRepository;
         private readonly IRepository<City> cityRepository;
+        private readonly Cloudinary cloudinary;
 
         public WorkPostsService(
             IDeletableEntityRepository<WorkPost> workPostRepository,
             IRepository<Address> addressRepository,
-            IRepository<City> cityRepository)
+            IRepository<City> cityRepository,
+            Cloudinary cloudinary)
         {
             this.workPostRepository = workPostRepository;
             this.addressRepository = addressRepository;
             this.cityRepository = cityRepository;
+            this.cloudinary = cloudinary;
         }
 
         public async Task CreateAsync(CreateWorkPostsInputModel input, string userId, string imagePath)
@@ -58,28 +63,42 @@
                 Providing = input.Providing,
             };
 
-            Directory.CreateDirectory($"{imagePath}/workposts/");
+           // Directory.CreateDirectory($"{imagePath}/workposts/");
 
             // /wwwroot/images/workpost{id}.{ext}
             foreach (var image in input.Images)
             {
-                var extension = Path.GetExtension(image.FileName).TrimStart('.');
-                if (!this.allowedExtensions.Any(x => extension.EndsWith(x)))
+                //var extension = Path.GetExtension(image.FileName).TrimStart('.');
+                //if (!this.allowedExtensions.Any(x => extension.EndsWith(x)))
+                //{
+                //    throw new Exception($"Invalid image extension {extension}");
+                //}
+
+                //var dbImage = new Image
+                //{
+                //    AddedByUserId = userId,
+                //    WorkPost = workPost,
+                //    Extension = extension,
+                //};
+                //workPost.Images.Add(dbImage);
+
+                //var physicalPath = $"{imagePath}/workposts/{dbImage.Id}.{dbImage.Extension}";
+                //using Stream fileStream = new FileStream(physicalPath, FileMode.Create);
+                //await image.CopyToAsync(fileStream);
+
+                if (image != null)
                 {
-                    throw new Exception($"Invalid image extension {extension}");
+                    var resultUrl = await Cloud.UploadAsync(this.cloudinary, image);
+
+                    var imageCloud = new Image
+                    {
+                        AddedByUserId = userId,
+                        WorkPost = workPost,
+                        Extension = null,
+                        RemoteImageUrl = resultUrl,
+                    };
+                    workPost.Images.Add(imageCloud);
                 }
-
-                var dbImage = new Image
-                {
-                    AddedByUserId = userId,
-                    WorkPost = workPost,
-                    Extension = extension,
-                };
-                workPost.Images.Add(dbImage);
-
-                var physicalPath = $"{imagePath}/workposts/{dbImage.Id}.{dbImage.Extension}";
-                using Stream fileStream = new FileStream(physicalPath, FileMode.Create);
-                await image.CopyToAsync(fileStream);
             }
 
             await this.workPostRepository.AddAsync(workPost);

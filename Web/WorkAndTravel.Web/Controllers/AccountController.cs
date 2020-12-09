@@ -11,7 +11,8 @@
         private readonly IProfilePostsService profilePostsService;
         private readonly UserManager<ApplicationUser> userManager;
 
-        public AccountController(IProfilePostsService profilePostsService,
+        public AccountController(
+            IProfilePostsService profilePostsService,
             UserManager<ApplicationUser> userManager)
         {
             this.profilePostsService = profilePostsService;
@@ -25,8 +26,6 @@
             {
                 id = userId;
             }
-
-           // var workPosts = this.profilePostsService.GetAll<ProfilePostViewModel>(id);
 
             var viewModel = new ProfileViewModel()
             {

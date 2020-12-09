@@ -3637,6 +3637,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
         "dependencies": {
+          "Cloudinary.Core": "1.31.0",
           "Microsoft.AspNetCore.Http.Features": "5.0.0",
           "WorkAndTravel.Data.Common": "1.0.0",
           "WorkAndTravel.Data.Models": "1.0.0",
