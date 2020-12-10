@@ -3,10 +3,9 @@
     this.ViewData["Title"] = "All workposts page";
 }
 
-<div class="dropdown text-md-left text-center float-right bg-white">
-    <label class="mr-2">Filter:</label>
-    <button class="btn btn-lg dropdown-toggle" onclick="sort()"></button>
-    <div class="dropdown-menu" hidden="hidden">
+<div class="dropdown text-md-left text-center float-right">
+    <button class="btn btn-lg btn-outline-dark mt-2 dropbtn">Filter <i class="fas fa-sort-down fa-lg"></i></button>
+    <div class="dropdown-content">
         <a asp-controller="WorkPost" asp-action="SortByName" class="dropdown-item">Title Ascending</a>
         <a asp-controller="WorkPost" asp-action="SortByDate" class="dropdown-item">Lastly added</a>
         <a asp-controller="WorkPost" asp-action="SortBySalary" class="dropdown-item">Payment</a>
@@ -31,18 +30,4 @@
     }
 </div>
 <hr />
-@section Scripts{ 
-    <script>
-        function sort() {
-            const divItem = $('.dropdown-menu');
-            if (divItem.attr('hidden')) {
-                divItem.removeAttr('hidden');
-                divItem.show('slow');
-            } else {
-                divItem.attr('hidden', 'hidden');
-                divItem.hide('slow');
-            }           
-        }
-    </script>
-}
 <partial name="_PagingPartial" model="@Model" />
