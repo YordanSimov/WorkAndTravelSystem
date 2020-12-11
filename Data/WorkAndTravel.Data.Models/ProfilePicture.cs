@@ -10,7 +10,7 @@
         [Required]
         public string Url { get; set; }
 
-        [ForeignKey(nameof(User))]
+        [ForeignKey(nameof(ApplicationUser))]
         public string UserId { get; set; }
 
         public ApplicationUser User { get; set; }

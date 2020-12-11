@@ -16,6 +16,8 @@
 
         public string Email { get; set; }
 
+        public DateTime CreatedOn { get; set; }
+
         public string ProfilePictureUrl { get; set; }
 
         public DateTime BirthDate { get; set; }

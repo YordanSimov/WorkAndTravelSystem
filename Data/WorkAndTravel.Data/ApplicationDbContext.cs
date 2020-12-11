@@ -62,6 +62,8 @@
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
+            builder.Entity<ApplicationUser>().HasOne(x => x.ProfilePicture).WithOne(x => x.User).HasForeignKey<ProfilePicture>(x => x.UserId);
+
             // Needed for Identity models configuration
             base.OnModelCreating(builder);
 

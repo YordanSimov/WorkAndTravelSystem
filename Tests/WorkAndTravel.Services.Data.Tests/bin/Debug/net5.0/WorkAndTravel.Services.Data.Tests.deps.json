@@ -53,6 +53,22 @@
           }
         }
       },
+      "Cloudinary.Core/1.31.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "10.0.1",
+          "System.ComponentModel.Primitives": "4.3.0",
+          "System.IO.FileSystem": "4.3.0",
+          "System.Net.Http": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard1.6/Cloudinary.Core.dll": {
+            "assemblyVersion": "1.31.0.0",
+            "fileVersion": "1.31.0.0"
+          }
+        }
+      },
       "Microsoft.AspNetCore.Cryptography.Internal/5.0.0": {
         "runtime": {
           "lib/net5.0/Microsoft.AspNetCore.Cryptography.Internal.dll": {
@@ -1941,6 +1957,7 @@
       },
       "WorkAndTravel.Services.Data/1.0.0": {
         "dependencies": {
+          "Cloudinary.Core": "1.31.0",
           "Microsoft.AspNetCore.Http.Features": "5.0.0",
           "WorkAndTravel.Data.Common": "1.0.0",
           "WorkAndTravel.Data.Models": "1.0.0",
@@ -1990,6 +2007,13 @@
       "sha512": "sha512-b5rRL5zeaau1y/5hIbI+6mGw3cwun16YjkHZnV9RRT5UyUIFsgLmNXJ0YnIN9p8Hw7K7AbG1q1UclQVU3DinAQ==",
       "path": "castle.core/4.4.0",
       "hashPath": "castle.core.4.4.0.nupkg.sha512"
+    },
+    "Cloudinary.Core/1.31.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-w2mz3NhHjRWqUKTFkVX1oJ341AlwWHm42/GSjxm7MfuJcaronPfdEOD+iCa7IVxcYGhrs/DTjMP9OdHO9+KJVw==",
+      "path": "cloudinary.core/1.31.0",
+      "hashPath": "cloudinary.core.1.31.0.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Cryptography.Internal/5.0.0": {
       "type": "package",

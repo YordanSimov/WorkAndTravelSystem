@@ -1,8 +1,6 @@
 ﻿namespace WorkAndTravel.Services.Data
 {
-    using System;
     using System.Collections.Generic;
-    using System.IO;
     using System.Linq;
     using System.Threading.Tasks;
 
@@ -10,13 +8,12 @@
     using WorkAndTravel.Data.Common.Repositories;
     using WorkAndTravel.Data.Models;
     using WorkAndTravel.Services.Mapping;
+    using WorkAndTravel.Web.Cloudinary;
     using WorkAndTravel.Web.ViewModels;
     using WorkAndTravel.Web.ViewModels.WorkPosts;
-    using WorkAndTravel.Web.Cloudinary;
 
     public class WorkPostsService : IWorkPostsService
     {
-        private readonly string[] allowedExtensions = new[] { "jpg", "png", "gif" };
         private readonly IDeletableEntityRepository<WorkPost> workPostRepository;
         private readonly IRepository<Address> addressRepository;
         private readonly IRepository<City> cityRepository;
@@ -63,29 +60,8 @@
                 Providing = input.Providing,
             };
 
-           // Directory.CreateDirectory($"{imagePath}/workposts/");
-
-            // /wwwroot/images/workpost{id}.{ext}
             foreach (var image in input.Images)
             {
-                //var extension = Path.GetExtension(image.FileName).TrimStart('.');
-                //if (!this.allowedExtensions.Any(x => extension.EndsWith(x)))
-                //{
-                //    throw new Exception($"Invalid image extension {extension}");
-                //}
-
-                //var dbImage = new Image
-                //{
-                //    AddedByUserId = userId,
-                //    WorkPost = workPost,
-                //    Extension = extension,
-                //};
-                //workPost.Images.Add(dbImage);
-
-                //var physicalPath = $"{imagePath}/workposts/{dbImage.Id}.{dbImage.Extension}";
-                //using Stream fileStream = new FileStream(physicalPath, FileMode.Create);
-                //await image.CopyToAsync(fileStream);
-
                 if (image != null)
                 {
                     var resultUrl = await Cloud.UploadAsync(this.cloudinary, image);
