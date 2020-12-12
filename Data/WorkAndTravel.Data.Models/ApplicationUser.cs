@@ -29,11 +29,6 @@ namespace WorkAndTravel.Data.Models
         [Required]
         public DateTime BirthDate { get; set; }
 
-        //[Required]
-
-        //[ForeignKey(nameof(ProfilePicture))]
-        //public int ProfilePictureId { get; set; }
-
         public virtual ProfilePicture ProfilePicture { get; set; }
 
         // Audit info
