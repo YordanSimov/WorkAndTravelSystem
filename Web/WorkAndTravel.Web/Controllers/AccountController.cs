@@ -49,21 +49,5 @@
             var viewModel = this.profileService.GetUserId<ProfileViewModel>(userId);
             return this.View(viewModel);
         }
-
-        public IActionResult Edit(string id)
-        {
-            var inputModel = this.profileService.GetUserId<EditProfileViewModel>(id);
-
-            return this.View(inputModel);
-        }
-
-        [HttpPost]
-        [Authorize]
-        public async Task<IActionResult> Edit(string id, EditProfileViewModel input)
-        {
-            var userId = id == null ? this.userManager.GetUserId(this.User) : id;
-            await this.profileService.EditAsync(userId, input);
-            return this.RedirectToAction(nameof(this.Index), new { Id = id });
-        }
     }
 }

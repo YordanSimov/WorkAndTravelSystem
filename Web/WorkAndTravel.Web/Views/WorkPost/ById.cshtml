@@ -1,4 +1,5 @@
-﻿@model WorkAndTravel.Web.ViewModels.WorkPosts.SingleWorkPostViewModel
+﻿@inject Microsoft.AspNetCore.Identity.UserManager<WorkAndTravel.Data.Models.ApplicationUser> UserManager
+@model WorkAndTravel.Web.ViewModels.WorkPosts.SingleWorkPostViewModel
 @{
     this.ViewData["Title"] = Model.Title;
     void DisplayComments(int? parentId)
@@ -51,7 +52,7 @@
         <h1 class="text-primary">@this.ViewData["Title"]</h1>
         @if (this.User.Identity.IsAuthenticated)
         {
-            @if (this.User.Identity.Name == Model.AddedByUserUsername)
+            @if (this.UserManager.GetUserId(this.User) == Model.AddedByUserId)
             {
                 <ul class="entry-meta">
                     <li class="single-meta float-md-right">
@@ -117,9 +118,9 @@
                 <h2 class="h4 d-flex align-items-center mb-4 text-primary">
                     <span class="icon-align-left mr-3">Job Description</span>
                 </h2>
-                    <p  >
-                        @Model.Description
-                    </p>
+                <p>
+                    @Model.Description
+                </p>
             </div>
             <div class="mb-5">
                 <h3 class="h5 d-flex align-items-center mb-4 text-primary"><span class="icon-rocket mr-3">Information about your responsibilities</span></h3>

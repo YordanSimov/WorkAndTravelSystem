@@ -8,6 +8,5 @@
     {
         T GetUserId<T>(string id);
 
-        Task EditAsync(string id, EditProfileViewModel input);
     }
 }
