@@ -33,9 +33,17 @@
                         </li>
                         @if (this.User.Identity.IsAuthenticated)
                         {
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="WorkPost" asp-action="Create">Create Post</a>
-                    </li>}
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="WorkPost" asp-action="Create">Create Post</a>
+                        </li>
+                        }
+                        
+                        @if (this.User.IsInRole(GlobalConstants.AdministratorRoleName))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="Administration" asp-controller="WorkPosts" asp-action="Index">WorkPosts Admin</a>
+                            </li>
+                        }
                     </ul>
                 </div>
             </div>

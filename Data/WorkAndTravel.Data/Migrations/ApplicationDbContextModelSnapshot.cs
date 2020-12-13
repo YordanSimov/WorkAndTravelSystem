@@ -17,7 +17,7 @@ namespace WorkAndTravel.Data.Migrations
             modelBuilder
                 .UseIdentityColumns()
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.0");
+                .HasAnnotation("ProductVersion", "5.0.1");
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
@@ -287,6 +287,28 @@ namespace WorkAndTravel.Data.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers");
+                });
+
+            modelBuilder.Entity("WorkAndTravel.Data.Models.AppliedUsersWorkPosts", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("ApplicationUserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("WorkPostId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ApplicationUserId");
+
+                    b.HasIndex("WorkPostId");
+
+                    b.ToTable("AppliedUsersWorkPosts");
                 });
 
             modelBuilder.Entity("WorkAndTravel.Data.Models.Category", b =>
@@ -631,6 +653,23 @@ namespace WorkAndTravel.Data.Migrations
                     b.Navigation("City");
                 });
 
+            modelBuilder.Entity("WorkAndTravel.Data.Models.AppliedUsersWorkPosts", b =>
+                {
+                    b.HasOne("WorkAndTravel.Data.Models.ApplicationUser", "ApplicationUser")
+                        .WithMany("AppliedUsersWorkPosts")
+                        .HasForeignKey("ApplicationUserId");
+
+                    b.HasOne("WorkAndTravel.Data.Models.WorkPost", "WorkPost")
+                        .WithMany("AppliedUsersWorkPosts")
+                        .HasForeignKey("WorkPostId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("ApplicationUser");
+
+                    b.Navigation("WorkPost");
+                });
+
             modelBuilder.Entity("WorkAndTravel.Data.Models.City", b =>
                 {
                     b.HasOne("WorkAndTravel.Data.Models.Country", "Country")
@@ -756,6 +795,8 @@ namespace WorkAndTravel.Data.Migrations
 
             modelBuilder.Entity("WorkAndTravel.Data.Models.ApplicationUser", b =>
                 {
+                    b.Navigation("AppliedUsersWorkPosts");
+
                     b.Navigation("Claims");
 
                     b.Navigation("Logins");
@@ -788,6 +829,8 @@ namespace WorkAndTravel.Data.Migrations
 
             modelBuilder.Entity("WorkAndTravel.Data.Models.WorkPost", b =>
                 {
+                    b.Navigation("AppliedUsersWorkPosts");
+
                     b.Navigation("Comments");
 
                     b.Navigation("Images");

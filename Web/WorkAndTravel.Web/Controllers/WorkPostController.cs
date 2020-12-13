@@ -1,6 +1,7 @@
 ﻿namespace WorkAndTravel.Web.Controllers
 {
     using System;
+    using System.Security.Claims;
     using System.Threading.Tasks;
 
     using Microsoft.AspNetCore.Authorization;
@@ -179,6 +180,19 @@
         {
             await this.workPostsService.DeleteAsync(id);
             return this.RedirectToAction(nameof(this.All));
+        }
+
+        [HttpPost]
+        [Authorize]
+        public async Task<IActionResult> Add(int postId, string userId)
+        {
+            if (userId == null)
+            {
+                userId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            }
+
+            await this.workPostsService.AddAsync(userId, postId);
+            return this.Redirect("/");
         }
     }
 }

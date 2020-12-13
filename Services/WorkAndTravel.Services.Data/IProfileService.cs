@@ -1,12 +1,10 @@
 ﻿namespace WorkAndTravel.Services.Data
 {
-    using System.Threading.Tasks;
-
-    using WorkAndTravel.Web.ViewModels.Account;
+    using System.Collections.Generic;
 
     public interface IProfileService
     {
         T GetUserId<T>(string id);
-
+        IEnumerable<T> GetUserAppliedToPosts<T>(string id);
     }
 }

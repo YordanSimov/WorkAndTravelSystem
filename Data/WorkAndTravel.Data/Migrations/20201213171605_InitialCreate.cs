@@ -319,6 +319,32 @@ namespace WorkAndTravel.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "AppliedUsersWorkPosts",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    WorkPostId = table.Column<int>(type: "int", nullable: false),
+                    ApplicationUserId = table.Column<string>(type: "nvarchar(450)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AppliedUsersWorkPosts", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_AppliedUsersWorkPosts_AspNetUsers_ApplicationUserId",
+                        column: x => x.ApplicationUserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_AppliedUsersWorkPosts_WorkPosts_WorkPostId",
+                        column: x => x.WorkPostId,
+                        principalTable: "WorkPosts",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Comments",
                 columns: table => new
                 {
@@ -423,6 +449,16 @@ namespace WorkAndTravel.Data.Migrations
                 name: "IX_Addresses_IsDeleted",
                 table: "Addresses",
                 column: "IsDeleted");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_AppliedUsersWorkPosts_ApplicationUserId",
+                table: "AppliedUsersWorkPosts",
+                column: "ApplicationUserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_AppliedUsersWorkPosts_WorkPostId",
+                table: "AppliedUsersWorkPosts",
+                column: "WorkPostId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
@@ -563,6 +599,9 @@ namespace WorkAndTravel.Data.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "AppliedUsersWorkPosts");
+
             migrationBuilder.DropTable(
                 name: "AspNetRoleClaims");
 

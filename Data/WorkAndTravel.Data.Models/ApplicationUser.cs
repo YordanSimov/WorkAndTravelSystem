@@ -18,6 +18,7 @@ namespace WorkAndTravel.Data.Models
             this.Claims = new HashSet<IdentityUserClaim<string>>();
             this.Logins = new HashSet<IdentityUserLogin<string>>();
             this.Ratings = new HashSet<Rating>();
+            this.AppliedUsersWorkPosts = new HashSet<AppliedUsersWorkPosts>();
         }
 
         [Required]
@@ -46,6 +47,8 @@ namespace WorkAndTravel.Data.Models
         public virtual ICollection<IdentityUserClaim<string>> Claims { get; set; }
 
         public virtual ICollection<IdentityUserLogin<string>> Logins { get; set; }
+
+        public virtual ICollection<AppliedUsersWorkPosts> AppliedUsersWorkPosts { get; set; }
 
         public virtual ICollection<Rating> Ratings { get; set; }
     }

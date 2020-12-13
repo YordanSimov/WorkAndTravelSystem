@@ -18,17 +18,20 @@
         private readonly IRepository<Address> addressRepository;
         private readonly IRepository<City> cityRepository;
         private readonly Cloudinary cloudinary;
+        private readonly IDeletableEntityRepository<ApplicationUser> usersRepository;
 
         public WorkPostsService(
             IDeletableEntityRepository<WorkPost> workPostRepository,
             IRepository<Address> addressRepository,
             IRepository<City> cityRepository,
-            Cloudinary cloudinary)
+            Cloudinary cloudinary,
+            IDeletableEntityRepository<ApplicationUser> usersRepository)
         {
             this.workPostRepository = workPostRepository;
             this.addressRepository = addressRepository;
             this.cityRepository = cityRepository;
             this.cloudinary = cloudinary;
+            this.usersRepository = usersRepository;
         }
 
         public async Task CreateAsync(CreateWorkPostsInputModel input, string userId, string imagePath)
@@ -143,6 +146,20 @@
         public int GetCount()
         {
             return this.workPostRepository.All().Count();
+        }
+
+        public async Task AddAsync(string userId, int postId)
+        {
+            var workPost = this.workPostRepository.All().Where(x => x.Id == postId).FirstOrDefault();
+            var user = this.usersRepository.All().Where(x => x.Id == userId).FirstOrDefault();
+
+            workPost.AddedByUser.AppliedUsersWorkPosts.Add(new AppliedUsersWorkPosts
+            {
+                ApplicationUserId = user.Id,
+                WorkPostId = workPost.Id,
+            });
+
+            await this.workPostRepository.SaveChangesAsync();
         }
     }
 }

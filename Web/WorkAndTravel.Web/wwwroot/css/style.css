@@ -2263,3 +2263,7 @@ img.zoom-img {
     display: block;
 }
 
+img.commentImage {
+    width: 60px;
+    height: 60px;
+}

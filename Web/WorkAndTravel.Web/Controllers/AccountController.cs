@@ -3,6 +3,7 @@
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
+    using System.Linq;
     using System.Threading.Tasks;
     using WorkAndTravel.Data.Models;
     using WorkAndTravel.Services.Data;
@@ -47,6 +48,15 @@
         {
             var userId = id == null ? this.userManager.GetUserId(this.User) : id;
             var viewModel = this.profileService.GetUserId<ProfileViewModel>(userId);
+            return this.View(viewModel);
+        }
+
+        [Authorize]
+
+        public IActionResult Applications(string id)
+        {
+            var userId = id == null ? this.userManager.GetUserId(this.User) : id;
+            var viewModel = this.profileService.GetUserAppliedToPosts<PostsListViewModel>(userId);
             return this.View(viewModel);
         }
     }

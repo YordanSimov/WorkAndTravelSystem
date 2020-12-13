@@ -12,6 +12,7 @@
             this.Images = new HashSet<Image>();
             this.Ratings = new HashSet<Rating>();
             this.Comments = new HashSet<Comment>();
+            this.AppliedUsersWorkPosts = new HashSet<AppliedUsersWorkPosts>();
         }
 
         [MaxLength(80)]
@@ -24,15 +25,9 @@
 
         public virtual ApplicationUser AddedByUser { get; set; }
 
-        public virtual ICollection<Comment> Comments { get; set; }
-
         public string Responsibility { get; set; }
 
         public int? PaymentPerDay { get; set; }
-
-        public virtual ICollection<Rating> Ratings { get; set; }
-
-        public virtual ICollection<Image> Images { get; set; }
 
         public int CategoryId { get; set; }
 
@@ -55,5 +50,14 @@
         public string Requirement { get; set; }
 
         public string Providing { get; set; }
+
+        public virtual ICollection<AppliedUsersWorkPosts> AppliedUsersWorkPosts { get; set; }
+
+        public virtual ICollection<Comment> Comments { get; set; }
+
+        public virtual ICollection<Rating> Ratings { get; set; }
+
+        public virtual ICollection<Image> Images { get; set; }
+
     }
 }

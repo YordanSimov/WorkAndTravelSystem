@@ -4,7 +4,6 @@
     using System.Linq;
     using System.Threading.Tasks;
 
-    using Microsoft.EntityFrameworkCore.Internal;
     using WorkAndTravel.Data.Models;
 
     public class CountriesSeeder : ISeeder

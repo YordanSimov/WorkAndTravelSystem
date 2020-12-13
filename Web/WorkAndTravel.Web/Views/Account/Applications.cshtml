@@ -1,0 +1,24 @@
+﻿@model IEnumerable<WorkAndTravel.Web.ViewModels.Account.PostsListViewModel>
+
+@{
+    this.ViewData["Title"] = "Posts I have applied to";
+}
+
+<h1>@this.ViewData["Title"]</h1>
+
+@foreach (var item in Model)
+{
+    <table class="table table-bordered table-hover table-striped">
+        <thead>
+            @foreach (var post in item.WorkPosts)
+            {
+                <tr>
+                    <th>
+                        <a asp-action="Index">@post.ApplicationUser.UserName</a> -
+                        <a asp-controller="WorkPost" asp-action="ById" asp-route-id="@post.WorkPost.Id">@post.WorkPost.Title</a>
+                    </th>
+                </tr>
+            }
+        </thead>
+    </table>
+}

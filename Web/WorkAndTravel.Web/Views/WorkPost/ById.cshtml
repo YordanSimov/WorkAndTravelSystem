@@ -19,7 +19,7 @@
                         <div class="card mb-4">
                             <div class="card-header">
                                 <div class="media flex-wrap w-100 align-items-center">
-                                    <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1574583246/AAA/2.jpg" class="d-block ui-w-40 rounded-circle" alt="">
+                                    <img src="@Model.AddedByUserProfilePictureUrl" class="commentImage d-block img-fluid rounded-circle">
                                     <div class="media-body ml-3">
                                         @comment.UserUserName
                                         <div class="text-muted small">
@@ -171,9 +171,10 @@
                 </ul>
                 <div>
                     <div class="row">
-                        <div class="col-6">
-                            <a href="#" class="btn btn-block btn-primary btn-md mt-3 ml-5">Apply Now</a>
-                        </div>
+                        <form asp-controller="WorkPost" asp-action="Add" method="post">
+                            <input type="hidden" name="postId" value="@Model.Id"/>
+                            <input type="submit" class="btn btn-primary btn-md mt-3 ml-5" value="Apply Now" />
+                        </form>
                     </div>
                 </div>
             </div>

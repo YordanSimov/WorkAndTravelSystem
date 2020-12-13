@@ -14,6 +14,8 @@
 
         int GetCount();
 
+        Task AddAsync(string userId, int postId);
+
         T GetById<T>(int id);
 
         Task EditAsync(int id, EditWorkPostInputModel input);

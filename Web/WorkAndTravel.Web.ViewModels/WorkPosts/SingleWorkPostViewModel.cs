@@ -25,6 +25,8 @@
 
         public string AddedByUserUsername { get; set; }
 
+        public string AddedByUserProfilePictureUrl { get; set; }
+
         public IEnumerable<string> RemoteImageUrl { get; set; }
 
         public string CityName { get; set; }
@@ -53,7 +55,9 @@
                 .ForMember(x => x.AverageRating, opt =>
                     opt.MapFrom(x => x.Ratings.Count() == 0 ? 0 : x.Ratings.Average(a => a.Value)))
                 .ForMember(x => x.RemoteImageUrl, opt =>
-            opt.MapFrom(x => x.Images.Select(x => x.RemoteImageUrl)));
+            opt.MapFrom(x => x.Images.Select(x => x.RemoteImageUrl)))
+                .ForMember(x => x.AddedByUserProfilePictureUrl, opt =>
+                  opt.MapFrom(x => x.AddedByUser.ProfilePicture.Url));
         }
     }
 }
