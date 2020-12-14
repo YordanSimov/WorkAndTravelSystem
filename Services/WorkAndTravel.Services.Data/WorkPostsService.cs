@@ -153,7 +153,7 @@
             var workPost = this.workPostRepository.All().Where(x => x.Id == postId).FirstOrDefault();
             var user = this.usersRepository.All().Where(x => x.Id == userId).FirstOrDefault();
 
-            workPost.AddedByUser.AppliedUsersWorkPosts.Add(new AppliedUsersWorkPosts
+            workPost.AppliedUsersWorkPosts.Add(new AppliedUsersWorkPosts
             {
                 ApplicationUserId = user.Id,
                 WorkPostId = workPost.Id,

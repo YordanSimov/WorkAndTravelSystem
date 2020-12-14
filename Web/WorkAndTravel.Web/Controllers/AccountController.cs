@@ -59,5 +59,15 @@
             var viewModel = this.profileService.GetUserAppliedToPosts<PostsListViewModel>(userId);
             return this.View(viewModel);
         }
+
+        [Authorize]
+
+        public IActionResult Applicants(string id)
+        {
+            var userId = id == null ? this.userManager.GetUserId(this.User) : id;
+
+            var viewModel = this.profileService.GetApplicants<PostsListViewModel>(userId);
+            return this.View(viewModel);
+        }
     }
 }

@@ -5,6 +5,9 @@
     public interface IProfileService
     {
         T GetUserId<T>(string id);
+
         IEnumerable<T> GetUserAppliedToPosts<T>(string id);
+
+        IEnumerable<T> GetApplicants<T>(string id);
     }
 }

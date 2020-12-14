@@ -29,5 +29,14 @@
         {
             return this.workPostsRepository.All().Where(x => x.AppliedUsersWorkPosts.Any(y => y.ApplicationUserId == id)).To<T>().ToList();
         }
+
+        public IEnumerable<T> GetApplicants<T>(string id)
+        {
+            var post = this.workPostsRepository.All().Where(x => x.AddedByUserId == id).First();
+
+            return this.workPostsRepository.All()
+                .Where(x => x.AppliedUsersWorkPosts
+                .Any(y => y.WorkPostId == post.Id)).To<T>().ToList();
+        }
     }
 }
