@@ -25,9 +25,7 @@
             configuration.CreateMap<WorkPost, WorkPostInListViewModel>()
                 .ForMember(x => x.RemoteImageUrl, opt =>
                     opt.MapFrom(x =>
-                     x.Images.FirstOrDefault().RemoteImageUrl != null ?
-                     x.Images.FirstOrDefault().RemoteImageUrl :
-                     "/images/workposts/" + x.Images.FirstOrDefault().Id + "." + x.Images.FirstOrDefault().Extension));
+                     x.Images.FirstOrDefault().RemoteImageUrl));
         }
     }
 }

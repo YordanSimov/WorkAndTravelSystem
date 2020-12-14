@@ -15,7 +15,7 @@
             {
                 <tr>
                     <th>
-                        <a asp-action="Index">@post.ApplicationUser.UserName</a> -
+                        <a asp-action="Index">@post.ApplicationUser.Email</a> -
                         <a asp-controller="WorkPost" asp-action="ById" asp-route-id="@post.WorkPost.Id">@post.WorkPost.Title</a>
                     </th>
                 </tr>
