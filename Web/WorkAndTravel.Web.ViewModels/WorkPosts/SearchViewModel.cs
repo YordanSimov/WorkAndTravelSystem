@@ -6,7 +6,7 @@
     using WorkAndTravel.Data.Models;
     using WorkAndTravel.Services.Mapping;
 
-    public class WorkPostInListViewModel : IMapFrom<WorkPost>, IHaveCustomMappings
+    public class SearchViewModel : IMapFrom<WorkPost>, IHaveCustomMappings
     {
         public int Id { get; set; }
 
@@ -24,7 +24,7 @@
 
         public void CreateMappings(IProfileExpression configuration)
         {
-            configuration.CreateMap<WorkPost, WorkPostInListViewModel>()
+            configuration.CreateMap<WorkPost, SearchViewModel>()
                 .ForMember(x => x.RemoteImageUrl, opt =>
                     opt.MapFrom(x =>
                      x.Images.FirstOrDefault().RemoteImageUrl));

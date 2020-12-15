@@ -8,19 +8,21 @@
 
     public interface IWorkPostsService
     {
-        Task CreateAsync(CreateWorkPostsInputModel input, string userId, string imagePath);
-
-        IEnumerable<T> GetAll<T>(int page, int postsPerPage = 12);
-
         int GetCount();
 
-        Task AddAsync(string userId, int postId);
-
         T GetById<T>(int id);
+
+        Task CreateAsync(CreateWorkPostsInputModel input, string userId, string imagePath);
+
+        Task AddAsync(string userId, int postId);
 
         Task EditAsync(int id, EditWorkPostInputModel input);
 
         Task DeleteAsync(int id);
+
+        IEnumerable<T> GetByCityName<T>(string cityName);
+
+        IEnumerable<T> GetAll<T>(int page, int postsPerPage = 12);
 
         IEnumerable<T> SortByDate<T>(int page, int postsPerPage = 12);
 

@@ -17,6 +17,11 @@
 <div class="text-center">
     <h1 class="display-4">Welcome to @GlobalConstants.SystemName!</h1>
 
+    <form asp-controller="WorkPost" asp-action="Search" method="get">
+        <input type="search" name="cityName" placeholder="Search by City.." class="form-control w-25" />
+        <button type="submit" class="btn btn-primary mb-4">Search</button>
+    </form>
+
     <div class="col-md-4 offset-md-4">
         <p>We provide work opportunities all over the EU: </p>
         <ul class="list-group">

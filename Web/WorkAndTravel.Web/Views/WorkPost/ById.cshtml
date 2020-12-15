@@ -170,12 +170,15 @@
                     <li class="mb-2"><i class="fas fa-envelope"></i><strong class="text-black"> Contact us: </strong> @Model.AddedByUserUsername </li>
                 </ul>
                 <div>
-                    <div class="row">
-                        <form asp-controller="WorkPost" asp-action="Add" method="post">
-                            <input type="hidden" name="postId" value="@Model.Id"/>
-                            <input type="submit" class="btn btn-primary btn-md mt-3 ml-5" value="Apply Now" />
-                        </form>
-                    </div>
+                    @if (this.User.Identity.IsAuthenticated && this.User.Identity.Name != Model.AddedByUserUsername)
+                    {
+                        <div class="row">
+                            <form asp-controller="WorkPost" asp-action="Add" method="post">
+                                <input type="hidden" name="postId" value="@Model.Id" />
+                                <input type="submit" class="btn btn-primary btn-md mt-3 ml-5" value="Apply Now" />
+                            </form>
+                        </div>
+                    }
                 </div>
             </div>
         </div>

@@ -192,7 +192,16 @@
             }
 
             await this.workPostsService.AddAsync(userId, postId);
-            return this.Redirect("/");
+            return this.Redirect("/Account/Applications");
+        }
+
+        public IActionResult Search(string cityName)
+        {
+            var viewModel = new SearchInListViewModel()
+            {
+                WorkPosts = this.workPostsService.GetByCityName<SearchViewModel>(cityName),
+            };
+            return this.View(viewModel);
         }
     }
 }

@@ -110,11 +110,9 @@
 
         public IEnumerable<T> GetAll<T>(int page, int postsPerPage = 12)
         {
-            var posts = this.workPostRepository.AllAsNoTracking().OrderByDescending(x => x.Id)
+            return this.workPostRepository.AllAsNoTracking().OrderByDescending(x => x.Id)
                 .Skip((page - 1) * postsPerPage).Take(postsPerPage)
                 .To<T>().ToList();
-
-            return posts;
         }
 
         public IEnumerable<T> SortByDate<T>(int page, int postsPerPage = 12)
@@ -160,6 +158,12 @@
             });
 
             await this.workPostRepository.SaveChangesAsync();
+        }
+
+        public IEnumerable<T> GetByCityName<T>(string cityName)
+        {
+            return this.workPostRepository.All().Where(x => x.City.Name == cityName)
+                .To<T>().ToList();
         }
     }
 }
