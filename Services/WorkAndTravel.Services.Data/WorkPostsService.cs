@@ -73,7 +73,6 @@
                     {
                         AddedByUserId = userId,
                         WorkPost = workPost,
-                        Extension = null,
                         RemoteImageUrl = resultUrl,
                     };
                     workPost.Images.Add(imageCloud);
@@ -108,42 +107,56 @@
             await this.workPostRepository.SaveChangesAsync();
         }
 
-        public IEnumerable<T> GetAll<T>(int page, int postsPerPage = 12)
+        public IEnumerable<T> GetAll<T>(int page, int postsPerPage = 8)
         {
-            return this.workPostRepository.AllAsNoTracking().OrderByDescending(x => x.Id)
+            return this.workPostRepository
+                .AllAsNoTracking()
+                .OrderByDescending(x => x.Id)
                 .Skip((page - 1) * postsPerPage).Take(postsPerPage)
                 .To<T>().ToList();
         }
 
-        public IEnumerable<T> SortByDate<T>(int page, int postsPerPage = 12)
+        public IEnumerable<T> SortByDate<T>(int page, int postsPerPage = 8)
         {
-            return this.workPostRepository.AllAsNoTracking().OrderByDescending(x => x.CreatedOn)
+            return this.workPostRepository
+                .AllAsNoTracking()
+                .OrderByDescending(x => x.CreatedOn)
                 .Skip((page - 1) * postsPerPage).Take(postsPerPage)
                 .To<T>().ToList();
         }
 
-        public IEnumerable<T> SortByName<T>(int page, int postsPerPage = 12)
+        public IEnumerable<T> SortByName<T>(int page, int postsPerPage = 8)
         {
-            return this.workPostRepository.AllAsNoTracking().OrderBy(x => x.Title)
+            return this.workPostRepository
+                .AllAsNoTracking()
+                .OrderBy(x => x.Title)
                 .Skip((page - 1) * postsPerPage).Take(postsPerPage)
                 .To<T>().ToList();
         }
 
-        public IEnumerable<T> SortBySalary<T>(int page, int postsPerPage = 12)
+        public IEnumerable<T> SortBySalary<T>(int page, int postsPerPage = 8)
         {
-            return this.workPostRepository.AllAsNoTracking().OrderByDescending(x => x.PaymentPerDay)
+            return this.workPostRepository
+                .AllAsNoTracking()
+                .OrderByDescending(x => x.PaymentPerDay)
                 .Skip((page - 1) * postsPerPage).Take(postsPerPage)
                 .To<T>().ToList();
         }
 
         public T GetById<T>(int id)
         {
-            return this.workPostRepository.AllAsNoTracking().Where(x => x.Id == id).To<T>().FirstOrDefault();
+            return this.workPostRepository
+                .AllAsNoTracking()
+                .Where(x => x.Id == id)
+                .To<T>()
+                .FirstOrDefault();
         }
 
         public int GetCount()
         {
-            return this.workPostRepository.All().Count();
+            return this.workPostRepository
+                .All()
+                .Count();
         }
 
         public async Task AddAsync(string userId, int postId)
@@ -162,13 +175,21 @@
 
         public IEnumerable<T> GetByCityName<T>(string cityName)
         {
-            return this.workPostRepository.All().Where(x => x.City.Name == cityName)
-                .To<T>().ToList();
+            return this.workPostRepository
+                .All()
+                .Where(x => x.City.Name == cityName)
+                .To<T>()
+                .ToList();
         }
 
         public IEnumerable<T> GetTopThreePosts<T>()
         {
-            return this.workPostRepository.All().OrderByDescending(x => x.Ratings.Average(a => a.Value)).Take(3).To<T>().ToList();
+            return this.workPostRepository
+                .All()
+                .OrderByDescending(x => x.Ratings.Average(a => a.Value))
+                .Take(3)
+                .To<T>()
+                .ToList();
         }
     }
 }

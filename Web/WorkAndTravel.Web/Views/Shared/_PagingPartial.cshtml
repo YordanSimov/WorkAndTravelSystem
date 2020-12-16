@@ -1,17 +1,60 @@
 ﻿@model WorkAndTravel.Web.ViewModels.WorkPosts.PagingViewModel
 <nav aria-label="...">
     <ul class="pagination justify-content-center">
+        @if (ViewContext.RouteData.Values["action"].ToString() == "SortByName")
+        {
+            <li class="page-item @if(!Model.HasPreviousPage) { <text> disabled </text>}">
+                <a class="page-link" asp-action="SortByName" asp-route-id="@Model.PreviousPageNumber">Previous</a>
+            </li>
+        }
+        else if (ViewContext.RouteData.Values["action"].ToString() == "SortBySalary")
+        {
+            <li class="page-item @if(!Model.HasPreviousPage) { <text> disabled </text>}">
+                <a class="page-link" asp-action="SortBySalary" asp-route-id="@Model.PreviousPageNumber">Previous</a>
+            </li>
+        }
+        else if (ViewContext.RouteData.Values["action"].ToString() == "SortByDate")
+        {
+            <li class="page-item @if(!Model.HasPreviousPage) { <text> disabled </text>}">
+                <a class="page-link" asp-action="SortByDate" asp-route-id="@Model.PreviousPageNumber">Previous</a>
+            </li>
+        }
+        else
+        {
         <li class="page-item @if(!Model.HasPreviousPage) { <text> disabled </text>}">
             <a class="page-link" asp-action="All" asp-route-id="@Model.PreviousPageNumber">Previous</a>
         </li>
+        }     
+
         <li class="page-item active">
             <span class="page-link">
                 @Model.PageNumber
                 <span class="sr-only">(current)</span>
             </span>
         </li>
-        <li class="page-item @if(!Model.HasNextPage) { <text> disabled </text>}">
-            <a class="page-link " asp-action="All" asp-route-id="@Model.NextPageNumber">Next</a>
-        </li>
+        @if (ViewContext.RouteData.Values["action"].ToString() == "SortByName")
+        {
+            <li class="page-item @if(!Model.HasNextPage) { <text> disabled </text>}">
+                <a class="page-link " asp-action="SortByName" asp-route-id="@Model.NextPageNumber">Next</a>
+            </li>
+        }
+        else if (ViewContext.RouteData.Values["action"].ToString() == "SortBySalary")
+        {
+            <li class="page-item @if(!Model.HasNextPage) { <text> disabled </text>}">
+                <a class="page-link " asp-action="SortBySalary" asp-route-id="@Model.NextPageNumber">Next</a>
+            </li>
+        }
+        else if (ViewContext.RouteData.Values["action"].ToString() == "SortByDate")
+        {
+            <li class="page-item @if(!Model.HasNextPage) { <text> disabled </text>}">
+                <a class="page-link " asp-action="SortByDate" asp-route-id="@Model.NextPageNumber">Next</a>
+            </li>
+        }
+        else
+        {
+            <li class="page-item @if(!Model.HasNextPage) { <text> disabled </text>}">
+                <a class="page-link " asp-action="All" asp-route-id="@Model.NextPageNumber">Next</a>
+            </li>
+        }
     </ul>
 </nav>

@@ -11,23 +11,26 @@
         <a asp-controller="WorkPost" asp-action="SortBySalary" class="dropdown-item">Payment</a>
     </div>
 </div>
-<h1>@this.ViewData["Title"]</h1>
+<h1 class="text-primary">@this.ViewData["Title"]</h1>
 
 <hr />
-<div class="row">
-    @foreach (var post in this.Model.WorkPosts)
-    {
-        <div class="card-deck card-columns media col-md-3">
-            <div class="card">
-                <img src="@post.RemoteImageUrl" class="card-img-top">
-                <div class="card-body">
-                    <h5 class="card-title"><a asp-action="ById" asp-route-id="@post.Id">@post.Title</a></h5>
-                    <p class="card-text ">@post.Description.Substring(0, 35) ...</p>
-                    <p class="card-text"><small class="text-muted">@post.CategoryName</small></p>
+<div class="container">
+    <div class="row">
+        @foreach (var post in this.Model.WorkPosts)
+        {
+            var title = post.Title.Substring(0, 14);
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="@post.RemoteImageUrl" style="height:300px; width:246px;" class="card-img-top img-fluid">
+                    <div class="card-body">
+                        <h5 class="card-title"><a asp-action="ById" asp-route-id="@post.Id">@title</a></h5>
+                        <p class="card-text ">@post.Description.Substring(0, 35) ...</p>
+                        <p class="card-text"><small class="text-muted">@post.CategoryName</small></p>
+                    </div>
                 </div>
             </div>
-        </div>
-    }
+        }
+    </div>
 </div>
 <hr />
 <partial name="_PagingPartial" model="@Model" />

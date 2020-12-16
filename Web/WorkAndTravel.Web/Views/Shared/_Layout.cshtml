@@ -14,7 +14,9 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-light bg-white mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">@GlobalConstants.SystemName</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img src="https://iconape.com/wp-content/files/tm/194580/png/194580.png" class="navImage img-fluid" />
+                </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -23,27 +25,27 @@
                     <partial name="_LoginPartial" />
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="font-weight-bolder nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="WorkPost" asp-action="All">All Posts</a>
+                            <a class="font-weight-bolder nav-link text-dark" asp-area="" asp-controller="WorkPost" asp-action="All">All Posts</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="ContactUs" asp-action="Index">Contact Us</a>
+                            <a class="font-weight-bolder nav-link text-dark" asp-area="" asp-controller="ContactUs" asp-action="Index">Contact Us</a>
                         </li>
                         @if (this.User.Identity.IsAuthenticated)
                         {
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="WorkPost" asp-action="Create">Create Post</a>
-                        </li>
-                        }
-                        
+            <li class="nav-item">
+                <a class="font-weight-bolder nav-link text-dark" asp-area="" asp-controller="WorkPost" asp-action="Create">Create Post</a>
+            </li>
+}
+
                         @if (this.User.IsInRole(GlobalConstants.AdministratorRoleName))
                         {
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="Administration" asp-controller="WorkPosts" asp-action="Index">WorkPosts Admin</a>
-                            </li>
-                        }
+            <li class="nav-item">
+                <a class="font-weight-bolder nav-link text-dark" asp-area="Administration" asp-controller="WorkPosts" asp-action="Index">WorkPosts Admin</a>
+            </li>
+}
                     </ul>
                 </div>
             </div>
@@ -57,12 +59,15 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; @DateTime.Now.Year - @GlobalConstants.SystemName - <a asp-area="" asp-controller="WorkPost" asp-action="All">All posts</a>
-            <a asp-area="" asp-controller="WorkPost" asp-action="Create">Create post</a>
-        </div>
-    </footer>
+    @*<div class="mt-5">*@
+            <footer class="border-top footer text-muted">
+                <div class="container">
+                    &copy; @DateTime.Now.Year - @GlobalConstants.SystemName - <a asp-area="" asp-controller="WorkPost" asp-action="All">All posts</a>
+                    <a asp-area="" asp-controller="WorkPost" asp-action="Create">Create post</a>
+                </div>
+            </footer>
+        @*</div>*@
+
 
     <script src="~/lib/jquery/dist/jquery.min.js" asp-append-version="true"></script>
     <script src="~/lib/jquery-validation/dist/jquery.validate.min.js" asp-append-version="true"></script>

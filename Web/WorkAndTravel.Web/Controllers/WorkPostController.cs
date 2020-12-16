@@ -102,13 +102,13 @@
                 return this.NotFound();
             }
 
-            const int ItemsPerPage = 12;
+            const int ItemsPerPage = 8;
             var viewModel = new WorkPostsListViewModel
             {
                 ItemsPerPage = ItemsPerPage,
                 PageNumber = id,
                 WorkPostsCount = this.workPostsService.GetCount(),
-                WorkPosts = this.workPostsService.GetAll<WorkPostInListViewModel>(id, 12),
+                WorkPosts = this.workPostsService.GetAll<WorkPostInListViewModel>(id, 8),
             };
             return this.View(viewModel);
         }
@@ -120,13 +120,13 @@
                 return this.NotFound();
             }
 
-            const int ItemsPerPage = 12;
+            const int ItemsPerPage = 8;
             var viewModel = new WorkPostsListViewModel
             {
                 ItemsPerPage = ItemsPerPage,
                 PageNumber = id,
                 WorkPostsCount = this.workPostsService.GetCount(),
-                WorkPosts = this.workPostsService.SortByDate<WorkPostInListViewModel>(id, 12),
+                WorkPosts = this.workPostsService.SortByDate<WorkPostInListViewModel>(id, 8),
             };
             return this.View("All", viewModel);
         }
@@ -138,13 +138,13 @@
                 return this.NotFound();
             }
 
-            const int ItemsPerPage = 12;
+            const int ItemsPerPage = 8;
             var viewModel = new WorkPostsListViewModel
             {
                 ItemsPerPage = ItemsPerPage,
                 PageNumber = id,
                 WorkPostsCount = this.workPostsService.GetCount(),
-                WorkPosts = this.workPostsService.SortByName<WorkPostInListViewModel>(id, 12),
+                WorkPosts = this.workPostsService.SortByName<WorkPostInListViewModel>(id, 8),
             };
             return this.View("All", viewModel);
         }
@@ -156,13 +156,13 @@
                 return this.NotFound();
             }
 
-            const int ItemsPerPage = 12;
+            const int ItemsPerPage = 8;
             var viewModel = new WorkPostsListViewModel
             {
                 ItemsPerPage = ItemsPerPage,
                 PageNumber = id,
                 WorkPostsCount = this.workPostsService.GetCount(),
-                WorkPosts = this.workPostsService.SortBySalary<WorkPostInListViewModel>(id, 12),
+                WorkPosts = this.workPostsService.SortBySalary<WorkPostInListViewModel>(id, 8),
             };
             return this.View("All", viewModel);
         }
@@ -192,6 +192,7 @@
             }
 
             await this.workPostsService.AddAsync(userId, postId);
+            this.TempData["Message"] = "You have successfully applied to a post. The creator will contact you via email.";
             return this.Redirect("/Account/Applications");
         }
 
