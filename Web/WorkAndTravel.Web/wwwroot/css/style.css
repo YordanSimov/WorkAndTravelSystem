@@ -2271,5 +2271,27 @@ img.commentImage {
 
 /*Search bar*/
 div.mySearch{
-    position: center
+    margin-top: 250px;
+    margin-bottom:100px;
+}
+
+/*Home pic*/
+
+div.homePic {
+    background-image: url('https://wallpaperaccess.com/full/185289.jpg');
+    background-repeat: no-repeat;
+    background-size: 80% auto;
+    background-position: center top;
+    background-attachment: fixed;
+}
+nav.navbar{
+    background: transparent !important;
+}
+h1.homeH{
+    margin-top: 50px;
+}
+
+img.snimka{
+    height:500px;
+    width:250px;
 }

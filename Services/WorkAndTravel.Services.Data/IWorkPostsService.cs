@@ -22,6 +22,8 @@
 
         IEnumerable<T> GetByCityName<T>(string cityName);
 
+        IEnumerable<T> GetTopThreePosts<T>();
+
         IEnumerable<T> GetAll<T>(int page, int postsPerPage = 12);
 
         IEnumerable<T> SortByDate<T>(int page, int postsPerPage = 12);

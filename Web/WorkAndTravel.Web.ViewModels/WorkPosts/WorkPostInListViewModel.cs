@@ -22,9 +22,13 @@
 
         public string CityName { get; set; }
 
+        public double AverageRating { get; set; }
+
         public void CreateMappings(IProfileExpression configuration)
         {
             configuration.CreateMap<WorkPost, WorkPostInListViewModel>()
+                .ForMember(x => x.AverageRating, opt =>
+                    opt.MapFrom(x => x.Ratings.Count() == 0 ? 0 : x.Ratings.Average(a => a.Value)))
                 .ForMember(x => x.RemoteImageUrl, opt =>
                     opt.MapFrom(x =>
                      x.Images.FirstOrDefault().RemoteImageUrl));

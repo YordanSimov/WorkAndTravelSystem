@@ -165,5 +165,10 @@
             return this.workPostRepository.All().Where(x => x.City.Name == cityName)
                 .To<T>().ToList();
         }
+
+        public IEnumerable<T> GetTopThreePosts<T>()
+        {
+            return this.workPostRepository.All().OrderByDescending(x => x.Ratings.Average(a => a.Value)).Take(3).To<T>().ToList();
+        }
     }
 }

@@ -1,34 +1,84 @@
 ﻿@using WorkAndTravel.Common
-@model WorkAndTravel.Web.ViewModels.Home.IndexViewModel
+@model WorkAndTravel.Web.ViewModels.Home.WorkPostsForIndexViewModel
 @{
     this.ViewData["Title"] = "Home Page";
 }
 
 @if (this.TempData.ContainsKey("Message"))
 {
-<div class="alert alert-warning alert-dismissible fade show">
-    @this.TempData["Message"]
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-    </button>
-</div>
+    <div class="alert alert-warning alert-dismissible fade show">
+        @this.TempData["Message"]
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
 }
-
-<div class="text-center">
-    <h1 class="display-4">Welcome to @GlobalConstants.SystemName!</h1>
-
-    <form asp-controller="WorkPost" asp-action="Search" method="get">
-        <input type="search" name="cityName" placeholder="Search by City.." class="form-control w-25" />
-        <button type="submit" class="btn btn-primary mb-4">Search</button>
-    </form>
-
-    <div class="col-md-4 offset-md-4">
-        <p>We provide work opportunities all over the EU: </p>
-        <ul class="list-group">
-            <li class="list-group-item">Work Posts: @Model.WorkPostsCount</li>
-            <li class="list-group-item">Types of work: @Model.CategoriesCount </li>
-            <li class="list-group-item">Countries: @Model.CountriesCount </li>
-            <li class="list-group-item">Cities: @Model.CitiesCount</li>
-        </ul>
+<div class="homePic">
+    <div class="text-center">
+        <h1 class="homeH display-4">Welcome to @GlobalConstants.SystemName!</h1>
+        <nav class="navbar justify-content-center">
+            <div class="mySearch">
+                <form class="form-inline" asp-controller="WorkPost" asp-action="Search" method="get">
+                    <input class="form-control mr-sm-2" type="search" name="cityName" placeholder="Search by City.." aria-label="Search">
+                    <button type="submit" class="btn btn-dark">Search</button>
+                </form>
+            </div>
+        </nav>
     </div>
 </div>
+    <h3 class="text-center mt-3 font-weight-bold">Three Categories:</h3>
+    <div class="row container mb-3 mt-4 text-center">
+        <div class="col-md-4 border">
+            <i class="fas fa-hands-helping mt-3 mb-3 fa-3x"></i>
+            <h5 class="font-weight-bold">Volunteer</h5>
+            <p>Volunteering in the EU is a perfect oportunity for every adventurous person.</p>
+        </div>
+        <div class="col-md-4 border">
+            <i class="fas fa-bed mt-3 mb-3 fa-3x"></i>
+            <h5 class="font-weight-bold">Couchsurfing</h5>
+            <p>Couchsurfing in the EU is a perfect oportunity for every person who wants to create relationships with new people.</p>
+        </div>
+        <div class="col-md-4 border">
+            <i class="fas fa-briefcase mt-3 mb-3 fa-3x"></i>
+            <h5 class="font-weight-bold">Working abroad</h5>
+            <p>Working abroad can give you a valuable experience which will help you in your next jobs.</p>
+        </div>
+    </div>
+<h3 class="text-center mt-3 font-weight-bold">Also..</h3>
+
+<div class="row container mb-3 mt-4 text-center">
+    <div class="col-md-4 border">
+        <i class="fas fa-briefcase mt-3 mb-3 fa-3x"></i>
+        <h5 class="font-weight-bold">@Model.WorkPostsCount</h5>
+        <p>Work Posts</p>
+    </div>
+    <div class="col-md-4 border">
+        <i class="fas fa-globe-europe mt-3 mb-3 fa-3x"></i>
+        <h5 class="font-weight-bold">@Model.CountriesCount</h5>
+        <p>Countries</p>
+    </div>
+    <div class="col-md-4 border">
+        <i class="fas fa-city mt-3 mb-3 fa-3x"></i>
+        <h5 class="font-weight-bold">@Model.CitiesCount</h5>
+        <p>Cities</p>
+    </div>
+</div>
+
+<h3 class="text-center mt-3 mb-3 font-weight-bold">Top 3 highest rated posts</h3>
+
+<div class="row mb-2  ml-2">
+    @foreach (var post in this.Model.WorkPosts)
+    {
+        <div class="card-deck card-columns media col-md-4  mr-2">
+            <div class="card">
+                <img src="@post.RemoteImageUrl" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title"><a asp-action="ById" asp-route-id="@post.Id">@post.Title</a></h5>
+                    <p class="card-text ">@post.Description.Substring(0, 35) ...</p>
+                    <p class="card-text"><small class="text-muted">@post.CategoryName</small></p>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+

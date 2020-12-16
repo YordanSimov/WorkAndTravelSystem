@@ -5,19 +5,30 @@
     using Microsoft.AspNetCore.Mvc;
     using WorkAndTravel.Services.Data;
     using WorkAndTravel.Web.ViewModels;
+    using WorkAndTravel.Web.ViewModels.Home;
 
     public class HomeController : BaseController
     {
+        private readonly IWorkPostsService workPostsService;
         private readonly IGetCountsService getCountsService;
 
-        public HomeController(IGetCountsService getCountsService)
+        public HomeController(
+            IWorkPostsService workPostsService,
+            IGetCountsService getCountsService)
         {
+            this.workPostsService = workPostsService;
             this.getCountsService = getCountsService;
         }
 
         public IActionResult Index()
         {
-            var viewModel = this.getCountsService.GetCounts();
+            var viewModel = new WorkPostsForIndexViewModel()
+            {
+                WorkPosts = this.workPostsService.GetTopThreePosts<IndexViewModel>(),
+            };
+            viewModel.CitiesCount = this.getCountsService.GetCitiesCounts();
+            viewModel.CountriesCount = this.getCountsService.GetCountriesCounts();
+            viewModel.WorkPostsCount = this.getCountsService.GetPostsCounts();
 
             return this.View(viewModel);
         }
