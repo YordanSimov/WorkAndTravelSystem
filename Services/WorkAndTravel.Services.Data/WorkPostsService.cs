@@ -34,15 +34,15 @@
             this.usersRepository = usersRepository;
         }
 
-        public async Task CreateAsync(CreateWorkPostsInputModel input, string userId, string imagePath)
+        public async Task CreateAsync(CreateWorkPostsInputModel input, string userId)
         {
-            var city = this.cityRepository.All().FirstOrDefault(x => x.Name == input.City);
+            var city = this.cityRepository.All().First(x => x.Name == input.City);
             if (city == null)
             {
                 city = new City { Name = input.City, CountryId = input.CountryId };
             }
 
-            var address = this.addressRepository.All().FirstOrDefault(x => x.Name == input.Address);
+            var address = this.addressRepository.All().First(x => x.Name == input.Address);
             if (address == null)
             {
                 address = new Address { Name = input.Address, City = city };
@@ -109,7 +109,7 @@
 
         public IEnumerable<T> GetAll<T>(int page, int postsPerPage = 8)
         {
-            return this.workPostRepository
+          return this.workPostRepository
                 .AllAsNoTracking()
                 .OrderByDescending(x => x.Id)
                 .Skip((page - 1) * postsPerPage).Take(postsPerPage)

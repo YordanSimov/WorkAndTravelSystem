@@ -18,7 +18,11 @@
 
         public IEnumerable<T> GetAll<T>(string id)
         {
-            return this.workpostRepository.All().Where(x => x.AddedByUserId == id).To<T>().ToList();
+            return this.workpostRepository
+                .All()
+                .Where(x => x.AddedByUserId == id)
+                .To<T>()
+                .ToList();
         }
     }
 }

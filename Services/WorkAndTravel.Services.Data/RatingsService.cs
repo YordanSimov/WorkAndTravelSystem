@@ -17,12 +17,16 @@
 
         public double GetAverageRating(int workPostId)
         {
-           return this.ratingsRepository.All().Where(x => x.WorkPostId == workPostId).Average(x => x.Value);
+           return this.ratingsRepository
+                .All()
+                .Where(x => x.WorkPostId == workPostId)
+                .Average(x => x.Value);
         }
 
         public async Task SetRatingAsync(int workPostId, string userId, byte value)
         {
-            var rating = this.ratingsRepository.All().FirstOrDefault(x => x.WorkPostId == workPostId && x.AddedByUserId == userId);
+            var rating = this.ratingsRepository.All()
+                .FirstOrDefault(x => x.WorkPostId == workPostId && x.AddedByUserId == userId);
 
             if (rating == null)
             {

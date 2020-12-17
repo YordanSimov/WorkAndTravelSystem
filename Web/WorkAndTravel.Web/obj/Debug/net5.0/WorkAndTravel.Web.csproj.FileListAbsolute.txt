@@ -507,3 +507,4 @@ C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\We
 C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Web\WorkAndTravel.Web\obj\Debug\net5.0\Razor\Views\Account\Applications.cshtml.g.cs
 C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Web\WorkAndTravel.Web\obj\Debug\net5.0\Razor\Views\Account\Applicants.cshtml.g.cs
 C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Web\WorkAndTravel.Web\obj\Debug\net5.0\Razor\Views\WorkPost\Search.cshtml.g.cs
+C:\Users\Simov\Desktop\WorkAndTravel-1f71601c9129b9a8ec84c1b718ee8996097b476e\Web\WorkAndTravel.Web\bin\Debug\net5.0\appsettings.Production.json

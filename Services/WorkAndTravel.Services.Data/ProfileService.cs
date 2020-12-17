@@ -22,17 +22,26 @@
 
         public T GetUserId<T>(string id)
         {
-            return this.userRepository.AllAsNoTracking().Where(x => x.Id == id).To<T>().FirstOrDefault();
+            return this.userRepository
+                .AllAsNoTracking()
+                .Where(x => x.Id == id)
+                .To<T>()
+                .FirstOrDefault();
         }
 
         public IEnumerable<T> GetUserAppliedToPosts<T>(string id)
         {
-            return this.workPostsRepository.All().Where(x => x.AppliedUsersWorkPosts.Any(y => y.ApplicationUserId == id)).To<T>().ToList();
+            return this.workPostsRepository
+                .All()
+                .Where(x => x.AppliedUsersWorkPosts.Any(y => y.ApplicationUserId == id))
+                .To<T>().ToList();
         }
 
         public IEnumerable<T> GetApplicants<T>(string id)
         {
-            var post = this.workPostsRepository.All().Where(x => x.AddedByUserId == id).First();
+            var post = this.workPostsRepository.All()
+                .Where(x => x.AddedByUserId == id)
+                .First();
 
             return this.workPostsRepository.All()
                 .Where(x => x.AppliedUsersWorkPosts

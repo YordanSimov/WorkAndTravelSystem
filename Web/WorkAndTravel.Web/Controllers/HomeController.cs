@@ -24,11 +24,11 @@
         {
             var viewModel = new WorkPostsForIndexViewModel()
             {
+                CitiesCount = this.getCountsService.GetCitiesCounts(),
+                CountriesCount = this.getCountsService.GetCountriesCounts(),
+                WorkPostsCount = this.getCountsService.GetPostsCounts(),
                 WorkPosts = this.workPostsService.GetTopThreePosts<IndexViewModel>(),
             };
-            viewModel.CitiesCount = this.getCountsService.GetCitiesCounts();
-            viewModel.CountriesCount = this.getCountsService.GetCountriesCounts();
-            viewModel.WorkPostsCount = this.getCountsService.GetPostsCounts();
 
             return this.View(viewModel);
         }

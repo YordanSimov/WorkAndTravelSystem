@@ -84,7 +84,7 @@
 
             try
             {
-                await this.workPostsService.CreateAsync(input, user.Id, $"{this.environment.WebRootPath}/images");
+                await this.workPostsService.CreateAsync(input, user.Id);
             }
             catch (Exception ex)
             {
