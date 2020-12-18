@@ -31,7 +31,11 @@
 
         public bool IsInPostId(int commentId, int postId)
         {
-            var commentPostId = this.commentsRepository.All().Where(x => x.Id == commentId).Select(x => x.WorkPostId).FirstOrDefault();
+            var commentPostId = this.commentsRepository
+                .All()
+                .Where(x => x.Id == commentId)
+                .Select(x => x.WorkPostId)
+                .FirstOrDefault();
 
             return commentPostId == postId;
         }
