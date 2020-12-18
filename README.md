@@ -13,4 +13,6 @@ You can apply to a post from it's page.
   <li>JavaScript</li>
   <li>SendGrid</li>
   <li>Cloudinary</li>
+  <li>Moment.js</li>
 </ul>
+<h2>Images</h2>
