@@ -10,7 +10,7 @@ using WorkAndTravel.Data;
 namespace WorkAndTravel.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20201213171605_InitialCreate")]
+    [Migration("20201218161712_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -431,9 +431,6 @@ namespace WorkAndTravel.Data.Migrations
 
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
-
-                    b.Property<string>("Extension")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("ModifiedOn")
                         .HasColumnType("datetime2");

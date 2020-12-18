@@ -61,7 +61,7 @@
             public string Email { get; set; }
 
             [Required]
-            [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
+            [StringLength(100, ErrorMessage = "{0} must be more than {2} characters.", MinimumLength = 6)]
             [DataType(DataType.Password)]
             [Display(Name = "Password")]
             public string Password { get; set; }
@@ -72,7 +72,7 @@
             public string ConfirmPassword { get; set; }
 
             [Required]
-            [StringLength(20, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 3)]
+            [StringLength(20, ErrorMessage = "{0} must be more than {2} characters.", MinimumLength = 3)]
             [Display(Name = "Username")]
             public string Username { get; set; }
 
@@ -87,6 +87,7 @@
             [Required]
             [Display(Name = "Birth Date")]
             [DataType(DataType.Date)]
+            [Range(typeof(DateTime), "1/1/1920", "31/12/2020", ErrorMessage = "Date is out of Range")]
             public DateTime BirthDate { get; set; }
 
             [Display(Name = "Upload Profile Picture")]

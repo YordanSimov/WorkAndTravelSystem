@@ -82,17 +82,9 @@
 
             var user = await this.userManager.GetUserAsync(this.User);
 
-            try
-            {
-                await this.workPostsService.CreateAsync(input, user.Id);
-            }
-            catch (Exception ex)
-            {
-                this.ModelState.AddModelError(string.Empty, ex.Message);
-            }
+            await this.workPostsService.CreateAsync(input, user.Id);
 
-            // TODO: Redirect to post page
-            return this.Redirect("/");
+            return this.RedirectToAction(nameof(this.All));
         }
 
         public IActionResult All(int id = 1)

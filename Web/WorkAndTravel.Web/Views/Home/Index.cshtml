@@ -25,61 +25,61 @@
             </div>
         </nav>
     </div>
-</body>
 
-<h3 class="text-center mt-3 font-weight-bold">Three Categories:</h3>
-<div class="row container mb-3 mt-4 text-center">
-    <div class="col-md-4 borderHome">
-        <i class="fas fa-hands-helping mt-3 mb-3 fa-3x"></i>
-        <h5 class="font-weight-bold">Volunteering</h5>
-        <p class="font-weight-bold">Volunteering in the EU is a perfect oportunity for every adventurous person.</p>
+    <h3 class="text-center mt-3 font-weight-bold">Three Categories:</h3>
+    <div class="row container mb-3 mt-4 text-center">
+        <div class="col-md-4 borderHome">
+            <i class="fas fa-hands-helping mt-3 mb-3 fa-3x"></i>
+            <h5 class="font-weight-bold">Volunteering</h5>
+            <p class="font-weight-bold">Volunteering in the EU is a perfect oportunity for every adventurous person.</p>
+        </div>
+        <div class="col-md-4 borderHome">
+            <i class="fas fa-bed mt-3 mb-3 fa-3x"></i>
+            <h5 class="font-weight-bold">Couchsurfing</h5>
+            <p class="font-weight-bold">Couchsurfing in the EU is a perfect oportunity for every person who wants to create relationships with new people.</p>
+        </div>
+        <div class="col-md-4 borderHome">
+            <i class="fas fa-briefcase mt-3 mb-3 fa-3x"></i>
+            <h5 class="font-weight-bold">Working abroad</h5>
+            <p class="font-weight-bold">Working abroad can give you a valuable experience which will help you in your next jobs.</p>
+        </div>
     </div>
-    <div class="col-md-4 borderHome">
-        <i class="fas fa-bed mt-3 mb-3 fa-3x"></i>
-        <h5 class="font-weight-bold">Couchsurfing</h5>
-        <p class="font-weight-bold">Couchsurfing in the EU is a perfect oportunity for every person who wants to create relationships with new people.</p>
-    </div>
-    <div class="col-md-4 borderHome">
-        <i class="fas fa-briefcase mt-3 mb-3 fa-3x"></i>
-        <h5 class="font-weight-bold">Working abroad</h5>
-        <p class="font-weight-bold">Working abroad can give you a valuable experience which will help you in your next jobs.</p>
-    </div>
-</div>
-<h3 class="text-center mt-3 font-weight-bold">Also..</h3>
+    <h3 class="text-center mt-3 font-weight-bold">Also..</h3>
 
-<div class="row container mb-3 mt-4 text-center">
-    <div class="col-md-4 borderHome">
-        <i class="fas fa-briefcase mt-3 mb-3 fa-3x"></i>
-        <h5 class="font-weight-bold">@Model.WorkPostsCount</h5>
-        <p class="font-weight-bold">Work Posts</p>
+    <div class="row container mb-3 mt-4 text-center">
+        <div class="col-md-4 borderHome">
+            <i class="fas fa-briefcase mt-3 mb-3 fa-3x"></i>
+            <h5 class="font-weight-bold">@Model.WorkPostsCount</h5>
+            <p class="font-weight-bold">Work Posts</p>
+        </div>
+        <div class="col-md-4 borderHome">
+            <i class="fas fa-globe-europe mt-3 mb-3 fa-3x"></i>
+            <h5 class="font-weight-bold">@Model.CountriesCount</h5>
+            <p class="font-weight-bold">Countries</p>
+        </div>
+        <div class="col-md-4 borderHome">
+            <i class="fas fa-city mt-3 mb-3 fa-3x"></i>
+            <h5 class="font-weight-bold">@Model.CitiesCount</h5>
+            <p class="font-weight-bold">Cities</p>
+        </div>
     </div>
-    <div class="col-md-4 borderHome">
-        <i class="fas fa-globe-europe mt-3 mb-3 fa-3x"></i>
-        <h5 class="font-weight-bold">@Model.CountriesCount</h5>
-        <p class="font-weight-bold">Countries</p>
-    </div>
-    <div class="col-md-4 borderHome">
-        <i class="fas fa-city mt-3 mb-3 fa-3x"></i>
-        <h5 class="font-weight-bold">@Model.CitiesCount</h5>
-        <p class="font-weight-bold">Cities</p>
-    </div>
-</div>
 
-<h3 class="text-center mt-3 mb-3 font-weight-bold">Top 3 highest rated posts</h3>
+    <h3 class="text-center mt-3 mb-3 font-weight-bold">Top 3 highest rated posts</h3>
 
-<div class="row mb-5 ml-2">
-    @foreach (var post in this.Model.WorkPosts)
-    {
-        <div class="card-deck card-columns media col-md-4 mr-2">
-            <div class="card borderHome" >
-                <img src="@post.RemoteImageUrl" class="card-img-top">
-                <div class="card-body">
-                    <h5 class="card-title"><a asp-action="ById" asp-route-id="@post.Id">@post.Title</a></h5>
-                    <p class="card-text ">@post.Description.Substring(0, 35) ...</p>
-                    <p class="card-text"><small class="text-muted">@post.CategoryName</small></p>
+    <div class="row mb-5 ml-2">
+        @foreach (var post in this.Model.WorkPosts)
+        {
+            <div class="card-deck card-columns media col-md-4 mr-2">
+                <div class="card borderHome">
+                    <img src="@post.RemoteImageUrl" class="card-img-top">
+                    <div class="card-body">
+                        <h6 class="card-title"><a asp-action="ById" asp-route-id="@post.Id">@post.Title</a></h6>
+                        <p class="card-text ">@post.Description.Substring(0, 35) ...</p>
+                        <p class="card-text"><small class="text-muted">@post.CategoryName</small></p>
+                    </div>
                 </div>
             </div>
-        </div>
-    }
-</div>
+        }
+    </div>
 
+</body>

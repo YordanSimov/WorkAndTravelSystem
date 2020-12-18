@@ -5,8 +5,8 @@
 
     public abstract class BaseWorkPostInputModel
     {
-
-        [Range(5,20)]
+        [MaxLength(100)]
+        [MinLength(5)]
         [Required]
         public string Title { get; set; }
 

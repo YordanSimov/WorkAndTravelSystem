@@ -18,12 +18,11 @@
     <div class="row">
         @foreach (var post in this.Model.WorkPosts)
         {
-            var title = post.Title.Substring(0, 14);
             <div class="col-md-3 mb-4">
                 <div class="card">
                     <img src="@post.RemoteImageUrl" style="height:300px; width:246px;" class="card-img-top img-fluid">
                     <div class="card-body">
-                        <h5 class="card-title"><a asp-action="ById" asp-route-id="@post.Id">@title</a></h5>
+                        <h6 class="card-title"><a asp-action="ById" asp-route-id="@post.Id">@post.Title</a></h6>
                         <p class="card-text ">@post.Description.Substring(0, 35) ...</p>
                         <p class="card-text"><small class="text-muted">@post.CategoryName</small></p>
                     </div>

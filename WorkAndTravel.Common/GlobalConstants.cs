@@ -9,7 +9,7 @@
         public const string AdminEmail = "yordansimov3@gmail.com";
 
         // Sendgrid
-        public const string SendGridKey = "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";
+        public const string SendGridReceiver = "roboplaybg@gmail.com";
 
         public const string DefaultProfilePicturePath = "https://res.cloudinary.com/dszoti5z4/image/upload/v1606211241/avatar_km6qjd.png";
     }

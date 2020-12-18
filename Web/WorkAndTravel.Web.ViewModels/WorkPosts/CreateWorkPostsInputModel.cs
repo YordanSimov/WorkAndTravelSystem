@@ -14,6 +14,7 @@
         [Required]
         public string Address { get; set; }
 
+        [Required]
         public IEnumerable<IFormFile> Images { get; set; }
 
         [Display(Name = "Country")]

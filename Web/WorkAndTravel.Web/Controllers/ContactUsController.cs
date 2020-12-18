@@ -29,12 +29,11 @@
         {
             if (this.ModelState.IsValid)
             {
-                var email = model.Email;
                 var name = model.Name;
                 var subject = model.Subject;
                 var content = model.Message;
 
-                await this.emailSender.SendEmailAsync(email, name, AdminEmail, subject, content, null);
+                await this.emailSender.SendEmailAsync(AdminEmail, name, SendGridReceiver, subject, content, null);
 
                 this.TempData["Message"] = "Email sent successfully.";
                 return this.Redirect("/");
