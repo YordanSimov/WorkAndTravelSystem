@@ -39,13 +39,26 @@
 
         public IEnumerable<T> GetApplicants<T>(string id)
         {
-            var post = this.workPostsRepository.All()
-                .Where(x => x.AddedByUserId == id)
-                .First();
+            var collection = new List<IQueryable<WorkPost>>();
+            var posts = this.workPostsRepository.All()
+                .Where(x => x.AddedByUserId == id);
 
-            return this.workPostsRepository.All()
-                .Where(x => x.AppliedUsersWorkPosts
-                .Any(y => y.WorkPostId == post.Id)).To<T>().ToList();
+            foreach (var item in posts)
+            {
+                var workPost = this.workPostsRepository.All().Where(x => x.AppliedUsersWorkPosts.Any(x => x.WorkPostId == item.Id));
+                collection.Add(workPost);
+            }
+
+            var result = new List<T>();
+            foreach (var c in collection)
+            {
+                if (c.To<T>().FirstOrDefault() != null)
+                {
+                    result.Add(c.To<T>().FirstOrDefault());
+                }
+            }
+
+            return result.ToList();
         }
     }
 }

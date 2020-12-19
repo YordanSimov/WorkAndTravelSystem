@@ -6,10 +6,8 @@
 
 <h1 class="text-primary">@this.ViewData["Title"]</h1>
 <hr />
-@foreach (var item in Model)
+@foreach (var item in Model.Where(x=>x.WorkPosts != null))
 {
-    if (item.WorkPosts != null)
-    {
     <table class="table table-bordered table-hover table-striped">
         <thead>
             @foreach (var post in item.WorkPosts)
@@ -23,5 +21,4 @@
             }
         </thead>
     </table>
-    }
 }

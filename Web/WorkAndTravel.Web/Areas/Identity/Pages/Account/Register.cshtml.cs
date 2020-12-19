@@ -87,7 +87,6 @@
             [Required]
             [Display(Name = "Birth Date")]
             [DataType(DataType.Date)]
-            [Range(typeof(DateTime), "1/1/1920", "31/12/2020", ErrorMessage = "Date is out of Range")]
             public DateTime BirthDate { get; set; }
 
             [Display(Name = "Upload Profile Picture")]

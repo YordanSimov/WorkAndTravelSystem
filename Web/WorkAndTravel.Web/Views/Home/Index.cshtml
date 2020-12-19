@@ -73,7 +73,7 @@
                 <div class="card borderHome">
                     <img src="@post.RemoteImageUrl" class="card-img-top">
                     <div class="card-body">
-                        <h6 class="card-title"><a asp-action="ById" asp-route-id="@post.Id">@post.Title</a></h6>
+                        <h6 class="card-title"><a asp-controller="WorkPost" asp-action="ById" asp-route-id="@post.Id">@post.Title</a></h6>
                         <p class="card-text ">@post.Description.Substring(0, 35) ...</p>
                         <p class="card-text"><small class="text-muted">@post.CategoryName</small></p>
                     </div>
